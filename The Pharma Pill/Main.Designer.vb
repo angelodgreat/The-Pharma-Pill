@@ -31,7 +31,24 @@ Partial Class Main
         Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
         Me.RadDropDownList2 = New Telerik.WinControls.UI.RadDropDownList()
         Me.rpvp_dv = New Telerik.WinControls.UI.RadPageViewPage()
-        Me.RadDropDownList3 = New Telerik.WinControls.UI.RadDropDownList()
+        Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.du_druginteractions = New Telerik.WinControls.UI.RadLabel()
+        Me.du_sideeffects = New Telerik.WinControls.UI.RadLabel()
+        Me.du_specialprecautions = New Telerik.WinControls.UI.RadLabel()
+        Me.du_contradiction = New Telerik.WinControls.UI.RadLabel()
+        Me.du_indication = New Telerik.WinControls.UI.RadLabel()
+        Me.du_drugfor = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel15 = New Telerik.WinControls.UI.RadLabel()
+        Me.du_children = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel17 = New Telerik.WinControls.UI.RadLabel()
+        Me.du_adult = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel19 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel20 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel21 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel22 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel23 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel24 = New Telerik.WinControls.UI.RadLabel()
+        Me.du_drugname_collection = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadLabel25 = New Telerik.WinControls.UI.RadLabel()
         Me.rpvp_dm = New Telerik.WinControls.UI.RadPageViewPage()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
@@ -41,11 +58,11 @@ Partial Class Main
         Me.RadLabel8 = New Telerik.WinControls.UI.RadLabel()
         Me.RadTextBox5 = New Telerik.WinControls.UI.RadTextBox()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.dm_interactions = New Telerik.WinControls.UI.RadTextBoxControl()
+        Me.dm_druginteractions = New Telerik.WinControls.UI.RadTextBoxControl()
         Me.dm_sideeffects = New Telerik.WinControls.UI.RadTextBoxControl()
         Me.dm_specialprecaution = New Telerik.WinControls.UI.RadTextBoxControl()
         Me.dm_contraindication = New Telerik.WinControls.UI.RadTextBoxControl()
-        Me.dm_drugfor = New Telerik.WinControls.UI.RadDropDownList()
+        Me.dm_drugtype = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadLabel14 = New Telerik.WinControls.UI.RadLabel()
         Me.dm_childrendose = New Telerik.WinControls.UI.RadTextBoxControl()
         Me.dm_children = New Telerik.WinControls.UI.RadLabel()
@@ -63,23 +80,8 @@ Partial Class Main
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.dm_drugname = New Telerik.WinControls.UI.RadTextBox()
         Me.rpvp_FAQ = New Telerik.WinControls.UI.RadPageViewPage()
-        Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.RadLabel31 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel30 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel29 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel28 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel27 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel26 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel15 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel16 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel17 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel18 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel19 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel20 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel21 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel22 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel23 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel24 = New Telerik.WinControls.UI.RadLabel()
+        Me.du_adultdose = New Telerik.WinControls.UI.RadLabel()
+        Me.du_childrendose = New Telerik.WinControls.UI.RadLabel()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPageView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPageView1.SuspendLayout()
@@ -89,7 +91,25 @@ Partial Class Main
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.rpvp_dv.SuspendLayout()
-        CType(Me.RadDropDownList3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadGroupBox4.SuspendLayout()
+        CType(Me.du_druginteractions, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.du_sideeffects, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.du_specialprecautions, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.du_contradiction, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.du_indication, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.du_drugfor, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.du_children, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.du_adult, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel23, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.du_drugname_collection, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel25, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.rpvp_dm.SuspendLayout()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,11 +121,11 @@ Partial Class Main
         CType(Me.RadTextBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
-        CType(Me.dm_interactions, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dm_druginteractions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_sideeffects, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_specialprecaution, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_contraindication, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dm_drugfor, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dm_drugtype, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_childrendose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_children, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -122,24 +142,8 @@ Partial Class Main
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_drugname, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RadGroupBox4.SuspendLayout()
-        CType(Me.RadLabel31, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel30, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel29, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel28, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel27, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel26, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel18, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel19, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel20, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel21, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel22, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel23, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.du_adultdose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.du_childrendose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -171,7 +175,7 @@ Partial Class Main
         Me.RadPageView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadPageView1.Location = New System.Drawing.Point(0, 20)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.rpvp_dm
+        Me.RadPageView1.SelectedPage = Me.rpvp_dv
         Me.RadPageView1.Size = New System.Drawing.Size(1531, 684)
         Me.RadPageView1.TabIndex = 4
         Me.RadPageView1.Text = "RadPageView1"
@@ -216,7 +220,7 @@ Partial Class Main
         'rpvp_dv
         '
         Me.rpvp_dv.Controls.Add(Me.RadGroupBox4)
-        Me.rpvp_dv.Controls.Add(Me.RadDropDownList3)
+        Me.rpvp_dv.Controls.Add(Me.du_drugname_collection)
         Me.rpvp_dv.Controls.Add(Me.RadLabel25)
         Me.rpvp_dv.ItemSize = New System.Drawing.SizeF(68.0!, 28.0!)
         Me.rpvp_dv.Location = New System.Drawing.Point(10, 37)
@@ -224,12 +228,169 @@ Partial Class Main
         Me.rpvp_dv.Size = New System.Drawing.Size(1510, 636)
         Me.rpvp_dv.Text = "Drug Uses"
         '
-        'RadDropDownList3
+        'RadGroupBox4
         '
-        Me.RadDropDownList3.Location = New System.Drawing.Point(552, 74)
-        Me.RadDropDownList3.Name = "RadDropDownList3"
-        Me.RadDropDownList3.Size = New System.Drawing.Size(401, 20)
-        Me.RadDropDownList3.TabIndex = 56
+        Me.RadGroupBox4.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox4.Controls.Add(Me.du_childrendose)
+        Me.RadGroupBox4.Controls.Add(Me.du_adultdose)
+        Me.RadGroupBox4.Controls.Add(Me.du_druginteractions)
+        Me.RadGroupBox4.Controls.Add(Me.du_sideeffects)
+        Me.RadGroupBox4.Controls.Add(Me.du_specialprecautions)
+        Me.RadGroupBox4.Controls.Add(Me.du_contradiction)
+        Me.RadGroupBox4.Controls.Add(Me.du_indication)
+        Me.RadGroupBox4.Controls.Add(Me.du_drugfor)
+        Me.RadGroupBox4.Controls.Add(Me.RadLabel15)
+        Me.RadGroupBox4.Controls.Add(Me.du_children)
+        Me.RadGroupBox4.Controls.Add(Me.RadLabel17)
+        Me.RadGroupBox4.Controls.Add(Me.du_adult)
+        Me.RadGroupBox4.Controls.Add(Me.RadLabel19)
+        Me.RadGroupBox4.Controls.Add(Me.RadLabel20)
+        Me.RadGroupBox4.Controls.Add(Me.RadLabel21)
+        Me.RadGroupBox4.Controls.Add(Me.RadLabel22)
+        Me.RadGroupBox4.Controls.Add(Me.RadLabel23)
+        Me.RadGroupBox4.Controls.Add(Me.RadLabel24)
+        Me.RadGroupBox4.HeaderText = "RadGroupBox4"
+        Me.RadGroupBox4.Location = New System.Drawing.Point(168, 100)
+        Me.RadGroupBox4.Name = "RadGroupBox4"
+        Me.RadGroupBox4.Size = New System.Drawing.Size(1181, 492)
+        Me.RadGroupBox4.TabIndex = 63
+        Me.RadGroupBox4.Text = "RadGroupBox4"
+        '
+        'du_druginteractions
+        '
+        Me.du_druginteractions.Location = New System.Drawing.Point(922, 257)
+        Me.du_druginteractions.Name = "du_druginteractions"
+        Me.du_druginteractions.Size = New System.Drawing.Size(64, 18)
+        Me.du_druginteractions.TabIndex = 78
+        Me.du_druginteractions.Text = "RadLabel31"
+        '
+        'du_sideeffects
+        '
+        Me.du_sideeffects.Location = New System.Drawing.Point(922, 162)
+        Me.du_sideeffects.Name = "du_sideeffects"
+        Me.du_sideeffects.Size = New System.Drawing.Size(64, 18)
+        Me.du_sideeffects.TabIndex = 77
+        Me.du_sideeffects.Text = "RadLabel30"
+        '
+        'du_specialprecautions
+        '
+        Me.du_specialprecautions.Location = New System.Drawing.Point(922, 67)
+        Me.du_specialprecautions.Name = "du_specialprecautions"
+        Me.du_specialprecautions.Size = New System.Drawing.Size(64, 18)
+        Me.du_specialprecautions.TabIndex = 76
+        Me.du_specialprecautions.Text = "RadLabel29"
+        '
+        'du_contradiction
+        '
+        Me.du_contradiction.Location = New System.Drawing.Point(315, 408)
+        Me.du_contradiction.Name = "du_contradiction"
+        Me.du_contradiction.Size = New System.Drawing.Size(64, 18)
+        Me.du_contradiction.TabIndex = 75
+        Me.du_contradiction.Text = "RadLabel28"
+        '
+        'du_indication
+        '
+        Me.du_indication.Location = New System.Drawing.Point(315, 117)
+        Me.du_indication.Name = "du_indication"
+        Me.du_indication.Size = New System.Drawing.Size(64, 18)
+        Me.du_indication.TabIndex = 74
+        Me.du_indication.Text = "RadLabel27"
+        '
+        'du_drugfor
+        '
+        Me.du_drugfor.AutoSize = False
+        Me.du_drugfor.Location = New System.Drawing.Point(315, 67)
+        Me.du_drugfor.Name = "du_drugfor"
+        Me.du_drugfor.Size = New System.Drawing.Size(64, 18)
+        Me.du_drugfor.TabIndex = 73
+        Me.du_drugfor.Text = "RadLabel26"
+        '
+        'RadLabel15
+        '
+        Me.RadLabel15.Location = New System.Drawing.Point(256, 67)
+        Me.RadLabel15.Name = "RadLabel15"
+        Me.RadLabel15.Size = New System.Drawing.Size(53, 18)
+        Me.RadLabel15.TabIndex = 72
+        Me.RadLabel15.Text = "Drug For:"
+        '
+        'du_children
+        '
+        Me.du_children.Location = New System.Drawing.Point(315, 310)
+        Me.du_children.Name = "du_children"
+        Me.du_children.Size = New System.Drawing.Size(48, 18)
+        Me.du_children.TabIndex = 71
+        Me.du_children.Text = "Children"
+        '
+        'RadLabel17
+        '
+        Me.RadLabel17.Location = New System.Drawing.Point(203, 310)
+        Me.RadLabel17.Name = "RadLabel17"
+        Me.RadLabel17.Size = New System.Drawing.Size(106, 18)
+        Me.RadLabel17.TabIndex = 70
+        Me.RadLabel17.Text = "Dosing Information:"
+        '
+        'du_adult
+        '
+        Me.du_adult.Location = New System.Drawing.Point(315, 212)
+        Me.du_adult.Name = "du_adult"
+        Me.du_adult.Size = New System.Drawing.Size(33, 18)
+        Me.du_adult.TabIndex = 69
+        Me.du_adult.Text = "Adult"
+        '
+        'RadLabel19
+        '
+        Me.RadLabel19.Location = New System.Drawing.Point(203, 212)
+        Me.RadLabel19.Name = "RadLabel19"
+        Me.RadLabel19.Size = New System.Drawing.Size(106, 18)
+        Me.RadLabel19.TabIndex = 68
+        Me.RadLabel19.Text = "Dosing Information:"
+        '
+        'RadLabel20
+        '
+        Me.RadLabel20.Location = New System.Drawing.Point(821, 257)
+        Me.RadLabel20.Name = "RadLabel20"
+        Me.RadLabel20.Size = New System.Drawing.Size(95, 18)
+        Me.RadLabel20.TabIndex = 67
+        Me.RadLabel20.Text = "Drug Interactions:"
+        '
+        'RadLabel21
+        '
+        Me.RadLabel21.Location = New System.Drawing.Point(742, 162)
+        Me.RadLabel21.Name = "RadLabel21"
+        Me.RadLabel21.Size = New System.Drawing.Size(174, 18)
+        Me.RadLabel21.TabIndex = 63
+        Me.RadLabel21.Text = "Adverse Drug Effects/Side Effects:"
+        '
+        'RadLabel22
+        '
+        Me.RadLabel22.Location = New System.Drawing.Point(811, 67)
+        Me.RadLabel22.Name = "RadLabel22"
+        Me.RadLabel22.Size = New System.Drawing.Size(105, 18)
+        Me.RadLabel22.TabIndex = 64
+        Me.RadLabel22.Text = "Special Precautions:"
+        '
+        'RadLabel23
+        '
+        Me.RadLabel23.Location = New System.Drawing.Point(218, 408)
+        Me.RadLabel23.Name = "RadLabel23"
+        Me.RadLabel23.Size = New System.Drawing.Size(91, 18)
+        Me.RadLabel23.TabIndex = 66
+        Me.RadLabel23.Text = "Contraindication:"
+        '
+        'RadLabel24
+        '
+        Me.RadLabel24.Location = New System.Drawing.Point(251, 117)
+        Me.RadLabel24.Name = "RadLabel24"
+        Me.RadLabel24.Size = New System.Drawing.Size(58, 18)
+        Me.RadLabel24.TabIndex = 65
+        Me.RadLabel24.Text = "Indication:"
+        '
+        'du_drugname_collection
+        '
+        Me.du_drugname_collection.Location = New System.Drawing.Point(552, 74)
+        Me.du_drugname_collection.Name = "du_drugname_collection"
+        Me.du_drugname_collection.Size = New System.Drawing.Size(401, 20)
+        Me.du_drugname_collection.TabIndex = 56
         '
         'RadLabel25
         '
@@ -305,11 +466,11 @@ Partial Class Main
         'RadGroupBox1
         '
         Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox1.Controls.Add(Me.dm_interactions)
+        Me.RadGroupBox1.Controls.Add(Me.dm_druginteractions)
         Me.RadGroupBox1.Controls.Add(Me.dm_sideeffects)
         Me.RadGroupBox1.Controls.Add(Me.dm_specialprecaution)
         Me.RadGroupBox1.Controls.Add(Me.dm_contraindication)
-        Me.RadGroupBox1.Controls.Add(Me.dm_drugfor)
+        Me.RadGroupBox1.Controls.Add(Me.dm_drugtype)
         Me.RadGroupBox1.Controls.Add(Me.RadLabel14)
         Me.RadGroupBox1.Controls.Add(Me.dm_childrendose)
         Me.RadGroupBox1.Controls.Add(Me.dm_children)
@@ -333,16 +494,18 @@ Partial Class Main
         Me.RadGroupBox1.TabIndex = 17
         Me.RadGroupBox1.Text = "Adding New Drug Records"
         '
-        'dm_interactions
+        'dm_druginteractions
         '
-        Me.dm_interactions.Location = New System.Drawing.Point(677, 238)
-        Me.dm_interactions.Name = "dm_interactions"
-        Me.dm_interactions.Size = New System.Drawing.Size(364, 89)
-        Me.dm_interactions.TabIndex = 40
+        Me.dm_druginteractions.Location = New System.Drawing.Point(677, 238)
+        Me.dm_druginteractions.Multiline = True
+        Me.dm_druginteractions.Name = "dm_druginteractions"
+        Me.dm_druginteractions.Size = New System.Drawing.Size(364, 89)
+        Me.dm_druginteractions.TabIndex = 40
         '
         'dm_sideeffects
         '
         Me.dm_sideeffects.Location = New System.Drawing.Point(677, 143)
+        Me.dm_sideeffects.Multiline = True
         Me.dm_sideeffects.Name = "dm_sideeffects"
         Me.dm_sideeffects.Size = New System.Drawing.Size(364, 89)
         Me.dm_sideeffects.TabIndex = 39
@@ -350,6 +513,7 @@ Partial Class Main
         'dm_specialprecaution
         '
         Me.dm_specialprecaution.Location = New System.Drawing.Point(677, 48)
+        Me.dm_specialprecaution.Multiline = True
         Me.dm_specialprecaution.Name = "dm_specialprecaution"
         Me.dm_specialprecaution.Size = New System.Drawing.Size(364, 89)
         Me.dm_specialprecaution.TabIndex = 38
@@ -357,16 +521,17 @@ Partial Class Main
         'dm_contraindication
         '
         Me.dm_contraindication.Location = New System.Drawing.Point(125, 391)
+        Me.dm_contraindication.Multiline = True
         Me.dm_contraindication.Name = "dm_contraindication"
         Me.dm_contraindication.Size = New System.Drawing.Size(364, 89)
         Me.dm_contraindication.TabIndex = 37
         '
-        'dm_drugfor
+        'dm_drugtype
         '
-        Me.dm_drugfor.Location = New System.Drawing.Point(125, 48)
-        Me.dm_drugfor.Name = "dm_drugfor"
-        Me.dm_drugfor.Size = New System.Drawing.Size(364, 20)
-        Me.dm_drugfor.TabIndex = 36
+        Me.dm_drugtype.Location = New System.Drawing.Point(125, 48)
+        Me.dm_drugtype.Name = "dm_drugtype"
+        Me.dm_drugtype.Size = New System.Drawing.Size(364, 20)
+        Me.dm_drugtype.TabIndex = 36
         '
         'RadLabel14
         '
@@ -379,6 +544,7 @@ Partial Class Main
         'dm_childrendose
         '
         Me.dm_childrendose.Location = New System.Drawing.Point(125, 317)
+        Me.dm_childrendose.Multiline = True
         Me.dm_childrendose.Name = "dm_childrendose"
         Me.dm_childrendose.Size = New System.Drawing.Size(364, 68)
         Me.dm_childrendose.TabIndex = 34
@@ -402,6 +568,7 @@ Partial Class Main
         'dm_adultdose
         '
         Me.dm_adultdose.Location = New System.Drawing.Point(125, 219)
+        Me.dm_adultdose.Multiline = True
         Me.dm_adultdose.Name = "dm_adultdose"
         Me.dm_adultdose.Size = New System.Drawing.Size(364, 68)
         Me.dm_adultdose.TabIndex = 31
@@ -465,6 +632,7 @@ Partial Class Main
         'dm_indication
         '
         Me.dm_indication.Location = New System.Drawing.Point(125, 100)
+        Me.dm_indication.Multiline = True
         Me.dm_indication.Name = "dm_indication"
         Me.dm_indication.Size = New System.Drawing.Size(364, 89)
         Me.dm_indication.TabIndex = 24
@@ -500,159 +668,21 @@ Partial Class Main
         Me.rpvp_FAQ.Size = New System.Drawing.Size(1510, 636)
         Me.rpvp_FAQ.Text = "FAQ"
         '
-        'RadGroupBox4
+        'du_adultdose
         '
-        Me.RadGroupBox4.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel31)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel30)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel29)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel28)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel27)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel26)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel15)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel16)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel17)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel18)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel19)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel20)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel21)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel22)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel23)
-        Me.RadGroupBox4.Controls.Add(Me.RadLabel24)
-        Me.RadGroupBox4.HeaderText = "RadGroupBox4"
-        Me.RadGroupBox4.Location = New System.Drawing.Point(168, 100)
-        Me.RadGroupBox4.Name = "RadGroupBox4"
-        Me.RadGroupBox4.Size = New System.Drawing.Size(1181, 492)
-        Me.RadGroupBox4.TabIndex = 63
-        Me.RadGroupBox4.Text = "RadGroupBox4"
+        Me.du_adultdose.Location = New System.Drawing.Point(315, 236)
+        Me.du_adultdose.Name = "du_adultdose"
+        Me.du_adultdose.Size = New System.Drawing.Size(62, 18)
+        Me.du_adultdose.TabIndex = 79
+        Me.du_adultdose.Text = "Adult Dose"
         '
-        'RadLabel31
+        'du_childrendose
         '
-        Me.RadLabel31.Location = New System.Drawing.Point(922, 257)
-        Me.RadLabel31.Name = "RadLabel31"
-        Me.RadLabel31.Size = New System.Drawing.Size(64, 18)
-        Me.RadLabel31.TabIndex = 78
-        Me.RadLabel31.Text = "RadLabel31"
-        '
-        'RadLabel30
-        '
-        Me.RadLabel30.Location = New System.Drawing.Point(922, 162)
-        Me.RadLabel30.Name = "RadLabel30"
-        Me.RadLabel30.Size = New System.Drawing.Size(64, 18)
-        Me.RadLabel30.TabIndex = 77
-        Me.RadLabel30.Text = "RadLabel30"
-        '
-        'RadLabel29
-        '
-        Me.RadLabel29.Location = New System.Drawing.Point(922, 67)
-        Me.RadLabel29.Name = "RadLabel29"
-        Me.RadLabel29.Size = New System.Drawing.Size(64, 18)
-        Me.RadLabel29.TabIndex = 76
-        Me.RadLabel29.Text = "RadLabel29"
-        '
-        'RadLabel28
-        '
-        Me.RadLabel28.Location = New System.Drawing.Point(315, 408)
-        Me.RadLabel28.Name = "RadLabel28"
-        Me.RadLabel28.Size = New System.Drawing.Size(64, 18)
-        Me.RadLabel28.TabIndex = 75
-        Me.RadLabel28.Text = "RadLabel28"
-        '
-        'RadLabel27
-        '
-        Me.RadLabel27.Location = New System.Drawing.Point(315, 117)
-        Me.RadLabel27.Name = "RadLabel27"
-        Me.RadLabel27.Size = New System.Drawing.Size(64, 18)
-        Me.RadLabel27.TabIndex = 74
-        Me.RadLabel27.Text = "RadLabel27"
-        '
-        'RadLabel26
-        '
-        Me.RadLabel26.Location = New System.Drawing.Point(315, 67)
-        Me.RadLabel26.Name = "RadLabel26"
-        Me.RadLabel26.Size = New System.Drawing.Size(64, 18)
-        Me.RadLabel26.TabIndex = 73
-        Me.RadLabel26.Text = "RadLabel26"
-        '
-        'RadLabel15
-        '
-        Me.RadLabel15.Location = New System.Drawing.Point(256, 67)
-        Me.RadLabel15.Name = "RadLabel15"
-        Me.RadLabel15.Size = New System.Drawing.Size(53, 18)
-        Me.RadLabel15.TabIndex = 72
-        Me.RadLabel15.Text = "Drug For:"
-        '
-        'RadLabel16
-        '
-        Me.RadLabel16.Location = New System.Drawing.Point(315, 310)
-        Me.RadLabel16.Name = "RadLabel16"
-        Me.RadLabel16.Size = New System.Drawing.Size(48, 18)
-        Me.RadLabel16.TabIndex = 71
-        Me.RadLabel16.Text = "Children"
-        '
-        'RadLabel17
-        '
-        Me.RadLabel17.Location = New System.Drawing.Point(203, 310)
-        Me.RadLabel17.Name = "RadLabel17"
-        Me.RadLabel17.Size = New System.Drawing.Size(106, 18)
-        Me.RadLabel17.TabIndex = 70
-        Me.RadLabel17.Text = "Dosing Information:"
-        '
-        'RadLabel18
-        '
-        Me.RadLabel18.Location = New System.Drawing.Point(315, 212)
-        Me.RadLabel18.Name = "RadLabel18"
-        Me.RadLabel18.Size = New System.Drawing.Size(33, 18)
-        Me.RadLabel18.TabIndex = 69
-        Me.RadLabel18.Text = "Adult"
-        '
-        'RadLabel19
-        '
-        Me.RadLabel19.Location = New System.Drawing.Point(203, 212)
-        Me.RadLabel19.Name = "RadLabel19"
-        Me.RadLabel19.Size = New System.Drawing.Size(106, 18)
-        Me.RadLabel19.TabIndex = 68
-        Me.RadLabel19.Text = "Dosing Information:"
-        '
-        'RadLabel20
-        '
-        Me.RadLabel20.Location = New System.Drawing.Point(821, 257)
-        Me.RadLabel20.Name = "RadLabel20"
-        Me.RadLabel20.Size = New System.Drawing.Size(95, 18)
-        Me.RadLabel20.TabIndex = 67
-        Me.RadLabel20.Text = "Drug Interactions:"
-        '
-        'RadLabel21
-        '
-        Me.RadLabel21.Location = New System.Drawing.Point(742, 162)
-        Me.RadLabel21.Name = "RadLabel21"
-        Me.RadLabel21.Size = New System.Drawing.Size(174, 18)
-        Me.RadLabel21.TabIndex = 63
-        Me.RadLabel21.Text = "Adverse Drug Effects/Side Effects:"
-        '
-        'RadLabel22
-        '
-        Me.RadLabel22.Location = New System.Drawing.Point(811, 67)
-        Me.RadLabel22.Name = "RadLabel22"
-        Me.RadLabel22.Size = New System.Drawing.Size(105, 18)
-        Me.RadLabel22.TabIndex = 64
-        Me.RadLabel22.Text = "Special Precautions:"
-        '
-        'RadLabel23
-        '
-        Me.RadLabel23.Location = New System.Drawing.Point(218, 408)
-        Me.RadLabel23.Name = "RadLabel23"
-        Me.RadLabel23.Size = New System.Drawing.Size(91, 18)
-        Me.RadLabel23.TabIndex = 66
-        Me.RadLabel23.Text = "Contraindication:"
-        '
-        'RadLabel24
-        '
-        Me.RadLabel24.Location = New System.Drawing.Point(251, 117)
-        Me.RadLabel24.Name = "RadLabel24"
-        Me.RadLabel24.Size = New System.Drawing.Size(58, 18)
-        Me.RadLabel24.TabIndex = 65
-        Me.RadLabel24.Text = "Indication:"
+        Me.du_childrendose.Location = New System.Drawing.Point(315, 334)
+        Me.du_childrendose.Name = "du_childrendose"
+        Me.du_childrendose.Size = New System.Drawing.Size(76, 18)
+        Me.du_childrendose.TabIndex = 80
+        Me.du_childrendose.Text = "Children Dose"
         '
         'Main
         '
@@ -678,7 +708,26 @@ Partial Class Main
         CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.rpvp_dv.ResumeLayout(False)
         Me.rpvp_dv.PerformLayout()
-        CType(Me.RadDropDownList3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadGroupBox4.ResumeLayout(False)
+        Me.RadGroupBox4.PerformLayout()
+        CType(Me.du_druginteractions, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.du_sideeffects, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.du_specialprecautions, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.du_contradiction, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.du_indication, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.du_drugfor, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.du_children, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.du_adult, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel23, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.du_drugname_collection, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel25, System.ComponentModel.ISupportInitialize).EndInit()
         Me.rpvp_dm.ResumeLayout(False)
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -692,11 +741,11 @@ Partial Class Main
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
         Me.RadGroupBox1.PerformLayout()
-        CType(Me.dm_interactions, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dm_druginteractions, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_sideeffects, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_specialprecaution, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_contraindication, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dm_drugfor, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dm_drugtype, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_childrendose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_children, System.ComponentModel.ISupportInitialize).EndInit()
@@ -713,25 +762,8 @@ Partial Class Main
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_drugname, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RadGroupBox4.ResumeLayout(False)
-        Me.RadGroupBox4.PerformLayout()
-        CType(Me.RadLabel31, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel30, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel29, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel28, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel27, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel26, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel18, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel19, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel20, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel21, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel22, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel23, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.du_adultdose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.du_childrendose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -770,31 +802,33 @@ Partial Class Main
     Friend WithEvents RadGroupBox3 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadLabel4 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadDropDownList2 As Telerik.WinControls.UI.RadDropDownList
-    Friend WithEvents dm_drugfor As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents dm_drugtype As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents RadLabel14 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents dm_interactions As Telerik.WinControls.UI.RadTextBoxControl
+    Friend WithEvents dm_druginteractions As Telerik.WinControls.UI.RadTextBoxControl
     Friend WithEvents dm_sideeffects As Telerik.WinControls.UI.RadTextBoxControl
     Friend WithEvents dm_specialprecaution As Telerik.WinControls.UI.RadTextBoxControl
     Friend WithEvents dm_contraindication As Telerik.WinControls.UI.RadTextBoxControl
     Friend WithEvents rpvp_dv As Telerik.WinControls.UI.RadPageViewPage
-    Friend WithEvents RadDropDownList3 As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents du_drugname_collection As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents RadLabel25 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadGroupBox4 As Telerik.WinControls.UI.RadGroupBox
-    Friend WithEvents RadLabel31 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel30 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel29 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel28 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel27 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel26 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents du_druginteractions As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents du_sideeffects As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents du_specialprecautions As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents du_contradiction As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents du_indication As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents du_drugfor As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel15 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel16 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents du_children As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel17 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel18 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents du_adult As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel19 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel20 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel21 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel22 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel23 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel24 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents du_childrendose As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents du_adultdose As Telerik.WinControls.UI.RadLabel
 End Class
 
