@@ -11,8 +11,9 @@ Public Class Main
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_drugnamein_du()
-        load_drugs_in_ph()
         load_listofdrugs()
+
+        ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue"
     End Sub
 
 
@@ -22,6 +23,8 @@ Public Class Main
             MysqlConn.ConnectionString = connstring
 
             du_drugname_collection.Items.Clear()
+            dm_daiph_drugname.Items.Clear()
+
             If MysqlConn.State = ConnectionState.Open Then
                 MysqlConn.Close()
             End If
@@ -32,39 +35,10 @@ Public Class Main
             reader = comm.ExecuteReader
 
             du_drugname_collection.Items.Clear()
+            dm_daiph_drugname.Items.Clear()
 
             While reader.Read
                 du_drugname_collection.Items.Add(reader.GetString("drugname"))
-            End While
-            MysqlConn.Close()
-
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
-        Finally
-            MysqlConn.Dispose()
-
-        End Try
-
-    End Sub
-
-    Public Sub load_drugs_in_ph()
-        Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
-
-            dm_daiph_drugname.Items.Clear()
-            If MysqlConn.State = ConnectionState.Open Then
-                MysqlConn.Close()
-            End If
-
-            MysqlConn.Open()
-            query = "SELECT drugname FROM drugs ORDER BY drugname ASC"
-            comm = New MySqlCommand(query, MysqlConn)
-            reader = comm.ExecuteReader
-
-            dm_daiph_drugname.Items.Clear()
-
-            While reader.Read
                 dm_daiph_drugname.Items.Add(reader.GetString("drugname"))
             End While
             MysqlConn.Close()
@@ -75,7 +49,10 @@ Public Class Main
             MysqlConn.Dispose()
 
         End Try
+
     End Sub
+
+
 
     'loading of drugname and available in ph
     Public Sub load_listofdrugs()
@@ -260,6 +237,11 @@ Public Class Main
         Finally
             MysqlConn.Dispose()
         End Try
+    End Sub
+
+    Private Sub rmi_faq_Click(sender As Object, e As EventArgs) Handles rmi_faq.Click
+        Dim faq As New FAQ
+        faq.Show()
     End Sub
 
 
