@@ -13,7 +13,7 @@ Public Class Main
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_drugnamein_du()
     End Sub
-    Private Sub dm_btn_save_Click(sender As Object, e As EventArgs) Handles dm_btn_save.Click
+    Private Sub dm_btn_save_Click(sender As Object, e As EventArgs)
         Try
             adddrug = RadMessageBox.Show("Are you sure you want to add this drug?", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Question)
 
@@ -30,8 +30,8 @@ Public Class Main
                     MysqlConn.Close()
                     MysqlConn.Open()
 
-                    query = "INSERT INTO drugs VALUES (@drugname,@indication,@contraindication,@specialprecautions,@sideeffects,@druginteraction,@drugtype);
-                             INSERT INTO dosinginformationtable VALUES (@drugname,@adult,@adultdose,@children,@childrendose) "
+                    query = "INSERT INTO drugs VALUES (@drugname,@indication,@contraindication,@specialprecautions,@sideeffects,@druginteraction,@drugtype,@adult,@adultdose,@children,@childrendose)"
+
                     comm = New MySqlCommand(query, MysqlConn)
                     comm.Parameters.AddWithValue("@drugname", dm_drugname.Text)
                     comm.Parameters.AddWithValue("@indication", dm_indication.Text)
@@ -98,34 +98,51 @@ Public Class Main
     End Sub
 
     Private Sub du_drugname_collection_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles du_drugname_collection.SelectedIndexChanged
-        'TO BE CONTINUED
-        'Try
-        '    MysqlConn = New MySqlConnection
-        '    MysqlConn.ConnectionString = connstring
-
-        '    If MysqlConn.State = ConnectionState.Open Then
-        '        MysqlConn.Close()
-        '    End If
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
 
 
-        '    MysqlConn.Open()
-        '    query = "SELECT drugname FROM drugs ORDER BY drugname ASC"
-        '    comm = New MySqlCommand(query, MysqlConn)
-        '    reader = comm.ExecuteReader
 
-        '    du_drugname_collection.Items.Clear()
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
 
-        '    While reader.Read
-        '        du_drugname_collection.Items.Add(reader.GetString("drugname"))
-        '    End While
-        '    MysqlConn.Close()
+            MysqlConn.Open()
+            query = "SELECT * FROM drugs WHERE drugname=@drugname"
+            comm = New MySqlCommand(query, MysqlConn)
+            comm.Parameters.AddWithValue("@drugname", du_drugname_collection.Text)
+            reader = comm.ExecuteReader
 
-        'Catch ex As Exception
-        '    RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
-        'Finally
-        '    MysqlConn.Dispose()
 
-        'End Try
+            While reader.Read
+                du_drugfor.Text = reader.GetString("drugtype")
+                du_indication.Text = reader.GetString("indication")
+                du_adultdose.Text = reader.GetString("adultdose")
+                du_childrendose.Text = reader.GetString("childrendose")
+                du_contraindication.Text = reader.GetString("contraindication")
+                du_specialprecautions.Text = reader.GetString("specialprecautions")
+                du_sideeffects.Text = reader.GetString("sideeffects")
+                du_druginteractions.Text = reader.GetString("druginteraction")
+            End While
+            MysqlConn.Close()
+
+
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Finally
+            MysqlConn.Dispose()
+        End Try
+
+    End Sub
+
+    'loading of drugname and available in ph
+    Public Sub load_listofdrugs()
+        Try
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
 
