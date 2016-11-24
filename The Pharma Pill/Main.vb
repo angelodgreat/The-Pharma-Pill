@@ -8,6 +8,7 @@ Public Class Main
     Dim query As String
 
     Dim adddrug As DialogResult
+    Dim exityn As DialogResult
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_drugnamein_du()
@@ -243,6 +244,33 @@ Public Class Main
         Dim faq As New FAQ
         faq.Show()
     End Sub
+
+    Private Sub dm_btn_clear_Click(sender As Object, e As EventArgs) Handles dm_btn_clear.Click
+        dm_drugtype.Text = ""
+        dm_drugname.Text = ""
+        dm_indication.Text = ""
+        dm_adultdose.Text = ""
+        dm_childrendose.Text = ""
+        dm_sideeffects.Text = ""
+        dm_druginteractions.Text = ""
+        dm_contraindication.Text = ""
+        dm_specialprecaution.Text = ""
+    End Sub
+
+    Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        exityn = RadMessageBox.Show("Are you sure you want to exit?", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Question)
+
+        If exityn = MsgBoxResult.Yes Then
+            Me.Dispose()
+
+        ElseIf exityn = MsgBoxResult.No Then
+            e.Cancel = True
+        End If
+
+    End Sub
+
+
 
 
 
