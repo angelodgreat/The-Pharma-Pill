@@ -22,7 +22,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuItem2 = New Telerik.WinControls.UI.RadMenuItem()
@@ -205,7 +205,7 @@ Partial Class Main
         Me.RadPageView1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadPageView1.Location = New System.Drawing.Point(0, 19)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.rpvp_dm
+        Me.RadPageView1.SelectedPage = Me.rpvp_dv
         Me.RadPageView1.Size = New System.Drawing.Size(1390, 702)
         Me.RadPageView1.TabIndex = 4
         Me.RadPageView1.Text = "RadPageView1"
@@ -297,73 +297,81 @@ Partial Class Main
         '
         'du_childrendose
         '
+        Me.du_childrendose.AutoSize = False
         Me.du_childrendose.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.du_childrendose.Location = New System.Drawing.Point(165, 334)
         Me.du_childrendose.Name = "du_childrendose"
-        Me.du_childrendose.Size = New System.Drawing.Size(89, 19)
+        Me.du_childrendose.Size = New System.Drawing.Size(462, 68)
         Me.du_childrendose.TabIndex = 80
         Me.du_childrendose.Text = "Children Dose"
         '
         'du_adultdose
         '
+        Me.du_adultdose.AutoSize = False
         Me.du_adultdose.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.du_adultdose.Location = New System.Drawing.Point(165, 236)
         Me.du_adultdose.Name = "du_adultdose"
-        Me.du_adultdose.Size = New System.Drawing.Size(71, 19)
+        Me.du_adultdose.Size = New System.Drawing.Size(462, 68)
         Me.du_adultdose.TabIndex = 79
         Me.du_adultdose.Text = "Adult Dose"
         '
         'du_druginteractions
         '
+        Me.du_druginteractions.AutoSize = False
         Me.du_druginteractions.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.du_druginteractions.Location = New System.Drawing.Point(854, 336)
         Me.du_druginteractions.Name = "du_druginteractions"
-        Me.du_druginteractions.Size = New System.Drawing.Size(76, 19)
+        Me.du_druginteractions.Size = New System.Drawing.Size(491, 179)
         Me.du_druginteractions.TabIndex = 78
         Me.du_druginteractions.Text = "Information"
         '
         'du_sideeffects
         '
+        Me.du_sideeffects.AutoSize = False
         Me.du_sideeffects.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.du_sideeffects.Location = New System.Drawing.Point(854, 194)
         Me.du_sideeffects.Name = "du_sideeffects"
-        Me.du_sideeffects.Size = New System.Drawing.Size(76, 19)
+        Me.du_sideeffects.Size = New System.Drawing.Size(491, 110)
         Me.du_sideeffects.TabIndex = 77
         Me.du_sideeffects.Text = "Information"
         '
         'du_specialprecautions
         '
+        Me.du_specialprecautions.AutoSize = False
         Me.du_specialprecautions.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.du_specialprecautions.Location = New System.Drawing.Point(854, 68)
         Me.du_specialprecautions.Name = "du_specialprecautions"
-        Me.du_specialprecautions.Size = New System.Drawing.Size(76, 19)
+        Me.du_specialprecautions.Size = New System.Drawing.Size(491, 94)
         Me.du_specialprecautions.TabIndex = 76
         Me.du_specialprecautions.Text = "Information"
         '
         'du_contraindication
         '
+        Me.du_contraindication.AutoSize = False
         Me.du_contraindication.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.du_contraindication.Location = New System.Drawing.Point(165, 408)
         Me.du_contraindication.Name = "du_contraindication"
-        Me.du_contraindication.Size = New System.Drawing.Size(76, 19)
+        Me.du_contraindication.Size = New System.Drawing.Size(573, 107)
         Me.du_contraindication.TabIndex = 75
         Me.du_contraindication.Text = "Information"
         '
         'du_indication
         '
+        Me.du_indication.AutoSize = False
         Me.du_indication.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.du_indication.Location = New System.Drawing.Point(165, 117)
         Me.du_indication.Name = "du_indication"
-        Me.du_indication.Size = New System.Drawing.Size(76, 19)
+        Me.du_indication.Size = New System.Drawing.Size(462, 89)
         Me.du_indication.TabIndex = 74
         Me.du_indication.Text = "Information"
         '
         'du_drugfor
         '
+        Me.du_drugfor.AutoSize = False
         Me.du_drugfor.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.du_drugfor.Location = New System.Drawing.Point(165, 43)
         Me.du_drugfor.Name = "du_drugfor"
-        Me.du_drugfor.Size = New System.Drawing.Size(76, 19)
+        Me.du_drugfor.Size = New System.Drawing.Size(462, 68)
         Me.du_drugfor.TabIndex = 73
         Me.du_drugfor.Text = "Information"
         '
@@ -545,7 +553,7 @@ Partial Class Main
         Me.dm_druglist.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill
         Me.dm_druglist.MasterTemplate.EnableGrouping = False
         Me.dm_druglist.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dm_druglist.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.dm_druglist.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.dm_druglist.Name = "dm_druglist"
         Me.dm_druglist.ReadOnly = True
         Me.dm_druglist.Size = New System.Drawing.Size(323, 297)

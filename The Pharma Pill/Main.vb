@@ -200,6 +200,9 @@ Public Class Main
 
             Dim columnbrandnameinph = dm_druglist.Columns(1)
             columnbrandnameinph.Width = 50
+
+            load_drugnamein_du()
+
         End Try
     End Sub
 
@@ -237,6 +240,7 @@ Public Class Main
             RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
         Finally
             MysqlConn.Dispose()
+
         End Try
     End Sub
 
