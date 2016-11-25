@@ -65,7 +65,7 @@ Public Class Main
             Dim dbdataset As New DataTable
 
             MysqlConn.Open()
-            query = "SELECT drugname as 'Drug Name' FROM drugs"
+            query = "SELECT drugfor as 'Drug For', drugname as 'Drug Name' FROM drugs"
             comm = New MySqlCommand(query, MysqlConn)
             sda.SelectCommand = comm
             sda.Fill(dbdataset)
@@ -100,19 +100,19 @@ Public Class Main
                     MysqlConn.Close()
                     MysqlConn.Open()
 
-                    query = "INSERT INTO drugs VALUES (@drugname,@indication,@contraindication,@specialprecautions,@sideeffects,@druginteraction,@drugtype,@adult,@adultdose,@children,@childrendose)"
+                    query = "INSERT INTO drugs VALUES (@drugfor,@drugclassification,@drugname,@indication,@contraindication,@specialprecautions,@sideeffects,@druginteraction,@dosinginformation,@adultdose,@childrendose)"
 
                     comm = New MySqlCommand(query, MysqlConn)
+                    comm.Parameters.AddWithValue("@drugfor", dm_drugfor.Text)
+                    comm.Parameters.AddWithValue("@drugclassification", dm_drugclassification.Text)
                     comm.Parameters.AddWithValue("@drugname", dm_drugname.Text)
                     comm.Parameters.AddWithValue("@indication", dm_indication.Text)
                     comm.Parameters.AddWithValue("@contraindication", dm_contraindication.Text)
-                    comm.Parameters.AddWithValue("@specialprecautions", dm_specialprecaution.Text)
+                    comm.Parameters.AddWithValue("@specialprecautions", dm_specialprecautions.Text)
                     comm.Parameters.AddWithValue("@sideeffects", dm_sideeffects.Text)
                     comm.Parameters.AddWithValue("@druginteraction", dm_druginteractions.Text)
-                    comm.Parameters.AddWithValue("@drugtype", dm_drugtype.Text)
-                    comm.Parameters.AddWithValue("@adult", dm_adult.Text)
+                    comm.Parameters.AddWithValue("dosinginformation", dm_dosinginformation.Text)
                     comm.Parameters.AddWithValue("@adultdose", dm_adultdose.Text)
-                    comm.Parameters.AddWithValue("@children", dm_children.Text)
                     comm.Parameters.AddWithValue("@childrendose", dm_childrendose.Text)
 
                     reader = comm.ExecuteReader
@@ -250,15 +250,18 @@ Public Class Main
     End Sub
 
     Private Sub dm_btn_clear_Click(sender As Object, e As EventArgs) Handles dm_btn_clear.Click
-        dm_drugtype.Text = ""
+        dm_drugfor.Text = ""
+        dm_drugclassification.Text = ""
         dm_drugname.Text = ""
         dm_indication.Text = ""
-        dm_adultdose.Text = ""
-        dm_childrendose.Text = ""
+        dm_contraindication.Text = ""
+        dm_specialprecautions.Text = ""
         dm_sideeffects.Text = ""
         dm_druginteractions.Text = ""
-        dm_contraindication.Text = ""
-        dm_specialprecaution.Text = ""
+        dm_dosinginformation.Text = ""
+        dm_adultdose.Text = ""
+        dm_childrendose.Text = ""
+
     End Sub
 
     Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -273,6 +276,8 @@ Public Class Main
         End If
 
     End Sub
+
+
 
 
 
