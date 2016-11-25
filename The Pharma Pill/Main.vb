@@ -65,7 +65,7 @@ Public Class Main
             Dim dbdataset As New DataTable
 
             MysqlConn.Open()
-            query = "SELECT drugfor as 'Drug For', drugname as 'Drug Name' FROM drugs"
+            query = "SELECT drugname as 'Drug Name',drugfor as 'Drug For' FROM drugs"
             comm = New MySqlCommand(query, MysqlConn)
             sda.SelectCommand = comm
             sda.Fill(dbdataset)
@@ -79,6 +79,12 @@ Public Class Main
             RadMessageBox.Show(ex.Message, "The Pharmacy Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
         Finally
             MysqlConn.Dispose()
+
+            Dim columndrugname = dm_druglist.Columns(0)
+            columndrugname.Width = 50
+
+            Dim columnbrandnameinph = dm_druglist.Columns(1)
+            columnbrandnameinph.Width = 50
         End Try
     End Sub
 
@@ -100,7 +106,7 @@ Public Class Main
                     MysqlConn.Close()
                     MysqlConn.Open()
 
-                    query = "INSERT INTO drugs VALUES (@drugfor,@drugclassification,@drugname,@indication,@contraindication,@specialprecautions,@sideeffects,@druginteraction,@dosinginformation,@adultdose,@childrendose)"
+                    query = "INSERT INTO drugs VALUES (@drugfor,@drugclassification,@drugname,@indication,@contraindication,@specialprecautions,@sideeffects,@druginteraction,@dosinginformationtype,@druginformation)"
 
                     comm = New MySqlCommand(query, MysqlConn)
                     comm.Parameters.AddWithValue("@drugfor", dm_drugfor.Text)
@@ -111,9 +117,9 @@ Public Class Main
                     comm.Parameters.AddWithValue("@specialprecautions", dm_specialprecautions.Text)
                     comm.Parameters.AddWithValue("@sideeffects", dm_sideeffects.Text)
                     comm.Parameters.AddWithValue("@druginteraction", dm_druginteractions.Text)
-                    comm.Parameters.AddWithValue("dosinginformation", dm_dosinginformation.Text)
-                    comm.Parameters.AddWithValue("@adultdose", dm_adultdose.Text)
-                    comm.Parameters.AddWithValue("@childrendose", dm_childrendose.Text)
+                    comm.Parameters.AddWithValue("dosinginformationtype", dm_dosinginformationtype.Text)
+                    comm.Parameters.AddWithValue("@druginformation", dm_dosinginformation.Text)
+
 
                     reader = comm.ExecuteReader
                     MysqlConn.Close()
@@ -126,6 +132,7 @@ Public Class Main
             RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
         Finally
             MysqlConn.Dispose()
+            load_drugnamein_du()
         End Try
     End Sub
 
@@ -145,15 +152,17 @@ Public Class Main
             reader = comm.ExecuteReader
 
 
+
             While reader.Read
-                du_drugfor.Text = reader.GetString("drugtype")
+                du_drugfor.Text = reader.GetString("drugfor")
                 du_indication.Text = reader.GetString("indication")
-                du_adultdose.Text = reader.GetString("adultdose")
-                du_childrendose.Text = reader.GetString("childrendose")
                 du_contraindication.Text = reader.GetString("contraindication")
                 du_specialprecautions.Text = reader.GetString("specialprecautions")
                 du_sideeffects.Text = reader.GetString("sideeffects")
                 du_druginteractions.Text = reader.GetString("druginteraction")
+                du_dosinginformationtype.Text = reader.GetString("dosinginformationtype")
+                du_dosinginformation.Text = reader.GetString("dosinginformation")
+
             End While
             MysqlConn.Close()
 
@@ -258,9 +267,8 @@ Public Class Main
         dm_specialprecautions.Text = ""
         dm_sideeffects.Text = ""
         dm_druginteractions.Text = ""
+        dm_dosinginformationtype.Text = ""
         dm_dosinginformation.Text = ""
-        dm_adultdose.Text = ""
-        dm_childrendose.Text = ""
 
     End Sub
 
@@ -276,6 +284,8 @@ Public Class Main
         End If
 
     End Sub
+
+
 
 
 
