@@ -22,7 +22,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TableViewDefinition6 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuItem2 = New Telerik.WinControls.UI.RadMenuItem()
@@ -67,6 +67,8 @@ Partial Class Main
         Me.RadGroupBox5 = New Telerik.WinControls.UI.RadGroupBox()
         Me.dm_druglist = New Telerik.WinControls.UI.RadGridView()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.dm_drugsinph = New Telerik.WinControls.UI.RadTextBoxControl()
+        Me.RadLabel12 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel11 = New Telerik.WinControls.UI.RadLabel()
         Me.dm_drugfor = New Telerik.WinControls.UI.RadDropDownList()
         Me.dm_dosinginformationtype = New Telerik.WinControls.UI.RadTextBox()
@@ -99,8 +101,6 @@ Partial Class Main
         Me.dm_drugname = New Telerik.WinControls.UI.RadTextBox()
         Me.TelerikMetroBlueTheme1 = New Telerik.WinControls.Themes.TelerikMetroBlueTheme()
         Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
-        Me.dm_drugsinph = New Telerik.WinControls.UI.RadTextBoxControl()
-        Me.RadLabel12 = New Telerik.WinControls.UI.RadLabel()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPageView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPageView1.SuspendLayout()
@@ -150,6 +150,8 @@ Partial Class Main
         CType(Me.dm_druglist.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
+        CType(Me.dm_drugsinph, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_drugfor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_dosinginformationtype, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -183,8 +185,6 @@ Partial Class Main
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_drugname, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dm_drugsinph, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -224,7 +224,7 @@ Partial Class Main
         Me.RadPageView1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadPageView1.Location = New System.Drawing.Point(0, 19)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.rpvp_dm
+        Me.RadPageView1.SelectedPage = Me.rpvp_dv
         Me.RadPageView1.Size = New System.Drawing.Size(1358, 679)
         Me.RadPageView1.TabIndex = 4
         Me.RadPageView1.Text = "RadPageView1"
@@ -655,7 +655,7 @@ Partial Class Main
         Me.dm_druglist.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill
         Me.dm_druglist.MasterTemplate.EnableGrouping = False
         Me.dm_druglist.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dm_druglist.MasterTemplate.ViewDefinition = TableViewDefinition6
+        Me.dm_druglist.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.dm_druglist.Name = "dm_druglist"
         Me.dm_druglist.ReadOnly = True
         Me.dm_druglist.Size = New System.Drawing.Size(323, 297)
@@ -699,6 +699,25 @@ Partial Class Main
         Me.RadGroupBox1.Size = New System.Drawing.Size(998, 595)
         Me.RadGroupBox1.TabIndex = 19
         Me.RadGroupBox1.Text = "Adding New Drug Records"
+        '
+        'dm_drugsinph
+        '
+        Me.dm_drugsinph.AcceptsReturn = True
+        Me.dm_drugsinph.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dm_drugsinph.Location = New System.Drawing.Point(127, 107)
+        Me.dm_drugsinph.Multiline = True
+        Me.dm_drugsinph.Name = "dm_drugsinph"
+        Me.dm_drugsinph.Size = New System.Drawing.Size(364, 88)
+        Me.dm_drugsinph.TabIndex = 41
+        '
+        'RadLabel12
+        '
+        Me.RadLabel12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadLabel12.Location = New System.Drawing.Point(32, 107)
+        Me.RadLabel12.Name = "RadLabel12"
+        Me.RadLabel12.Size = New System.Drawing.Size(89, 30)
+        Me.RadLabel12.TabIndex = 42
+        Me.RadLabel12.Text = "Drugs available" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "in PH:"
         '
         'RadLabel11
         '
@@ -1006,25 +1025,6 @@ Partial Class Main
         Me.FileSystemWatcher1.EnableRaisingEvents = True
         Me.FileSystemWatcher1.SynchronizingObject = Me
         '
-        'dm_drugsinph
-        '
-        Me.dm_drugsinph.AcceptsReturn = True
-        Me.dm_drugsinph.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dm_drugsinph.Location = New System.Drawing.Point(127, 107)
-        Me.dm_drugsinph.Multiline = True
-        Me.dm_drugsinph.Name = "dm_drugsinph"
-        Me.dm_drugsinph.Size = New System.Drawing.Size(364, 88)
-        Me.dm_drugsinph.TabIndex = 41
-        '
-        'RadLabel12
-        '
-        Me.RadLabel12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel12.Location = New System.Drawing.Point(32, 107)
-        Me.RadLabel12.Name = "RadLabel12"
-        Me.RadLabel12.Size = New System.Drawing.Size(89, 30)
-        Me.RadLabel12.TabIndex = 42
-        Me.RadLabel12.Text = "Drugs available" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "in PH:"
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1094,6 +1094,8 @@ Partial Class Main
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
         Me.RadGroupBox1.PerformLayout()
+        CType(Me.dm_drugsinph, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_drugfor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_dosinginformationtype, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1128,8 +1130,6 @@ Partial Class Main
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_drugname, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dm_drugsinph, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

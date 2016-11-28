@@ -13,7 +13,8 @@ Public Class Main
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_drugnamein_du()
         load_listofdrugs()
-
+        load_drug_classification()
+        load_du_drugname_with_assoc_du_drugclass()
         ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue"
     End Sub
 
@@ -23,7 +24,7 @@ Public Class Main
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
 
-            du_drugname_collection.Items.Clear()
+
             dm_daiph_drugname.Items.Clear()
 
             If MysqlConn.State = ConnectionState.Open Then
@@ -35,11 +36,11 @@ Public Class Main
             comm = New MySqlCommand(query, MysqlConn)
             reader = comm.ExecuteReader
 
-            du_drugname_collection.Items.Clear()
+
             dm_daiph_drugname.Items.Clear()
 
             While reader.Read
-                du_drugname_collection.Items.Add(reader.GetString("drugname"))
+
                 dm_daiph_drugname.Items.Add(reader.GetString("drugname"))
             End While
             MysqlConn.Close()
@@ -52,6 +53,79 @@ Public Class Main
         End Try
 
     End Sub
+
+    Public Sub load_du_drugname_with_assoc_du_drugclass()
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            du_drugname_collection.Items.Clear()
+
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT drugname FROM drugs WHERE drugclassification=@drugclassfication ORDER BY drugname ASC"
+            comm = New MySqlCommand(query, MysqlConn)
+            comm.Parameters.AddWithValue("@drugclassfication", du_drugclassification_collection.Text)
+            reader = comm.ExecuteReader
+
+            du_drugname_collection.Items.Clear()
+
+            While reader.Read
+                du_drugname_collection.Items.Add(reader.GetString("drugname"))
+
+            End While
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+    End Sub
+
+
+
+
+    Public Sub load_drug_classification()
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            dm_drugclassification.Items.Clear()
+            du_drugclassification_collection.Items.Clear()
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT DISTINCT drugclassification FROM drugs ORDER BY drugclassification ASC"
+            comm = New MySqlCommand(query, MysqlConn)
+            reader = comm.ExecuteReader
+
+            dm_drugclassification.Items.Clear()
+            du_drugclassification_collection.Items.Clear()
+
+            While reader.Read
+                dm_drugclassification.Items.Add(reader.GetString("drugclassification"))
+                du_drugclassification_collection.Items.Add(reader.GetString("drugclassification"))
+
+            End While
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+    End Sub
+
 
 
 
@@ -87,6 +161,7 @@ Public Class Main
             columnbrandnameinph.Width = 50
         End Try
     End Sub
+
 
 
     Private Sub dm_btn_save_Click(sender As Object, e As EventArgs) Handles dm_btn_save.Click
