@@ -22,7 +22,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuItem2 = New Telerik.WinControls.UI.RadMenuItem()
@@ -100,7 +100,6 @@ Partial Class Main
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.dm_drugname = New Telerik.WinControls.UI.RadTextBox()
         Me.TelerikMetroBlueTheme1 = New Telerik.WinControls.Themes.TelerikMetroBlueTheme()
-        Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPageView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPageView1.SuspendLayout()
@@ -184,7 +183,6 @@ Partial Class Main
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_drugname, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -655,7 +653,7 @@ Partial Class Main
         Me.dm_druglist.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill
         Me.dm_druglist.MasterTemplate.EnableGrouping = False
         Me.dm_druglist.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dm_druglist.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.dm_druglist.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dm_druglist.Name = "dm_druglist"
         Me.dm_druglist.ReadOnly = True
         Me.dm_druglist.Size = New System.Drawing.Size(323, 297)
@@ -825,7 +823,7 @@ Partial Class Main
         Me.dm_daiph_drugname.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dm_daiph_drugname.Location = New System.Drawing.Point(5, 54)
         Me.dm_daiph_drugname.Name = "dm_daiph_drugname"
-        Me.dm_daiph_drugname.Size = New System.Drawing.Size(441, 19)
+        Me.dm_daiph_drugname.Size = New System.Drawing.Size(441, 0)
         Me.dm_daiph_drugname.TabIndex = 14
         '
         'RadLabel1
@@ -853,7 +851,7 @@ Partial Class Main
         Me.dm_daiph_tb_brandinph.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dm_daiph_tb_brandinph.Location = New System.Drawing.Point(5, 103)
         Me.dm_daiph_tb_brandinph.Name = "dm_daiph_tb_brandinph"
-        Me.dm_daiph_tb_brandinph.Size = New System.Drawing.Size(441, 19)
+        Me.dm_daiph_tb_brandinph.Size = New System.Drawing.Size(441, 0)
         Me.dm_daiph_tb_brandinph.TabIndex = 15
         '
         'dm_druginteractions
@@ -1020,11 +1018,6 @@ Partial Class Main
         Me.dm_drugname.Size = New System.Drawing.Size(364, 19)
         Me.dm_drugname.TabIndex = 2
         '
-        'FileSystemWatcher1
-        '
-        Me.FileSystemWatcher1.EnableRaisingEvents = True
-        Me.FileSystemWatcher1.SynchronizingObject = Me
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1129,7 +1122,6 @@ Partial Class Main
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_drugname, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1187,7 +1179,6 @@ Partial Class Main
     Friend WithEvents dm_drugfor As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents dm_dosinginformationtype As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel16 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
     Friend WithEvents du_btn_search As Telerik.WinControls.UI.RadButton
     Friend WithEvents du_drugclassification_collection As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents RadLabel18 As Telerik.WinControls.UI.RadLabel
