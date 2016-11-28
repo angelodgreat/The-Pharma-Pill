@@ -14,10 +14,43 @@ Public Class Main
         load_drugnamein_du()
         load_listofdrugs()
         load_drug_classification()
-        load_du_drugname_with_assoc_du_drugclass()
+        load_drug_for_dm()
         ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue"
     End Sub
 
+    Public Sub load_drug_for_dm()
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+
+            dm_drugfor.Items.Clear()
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT DISTINCT drugfor FROM drugs ORDER BY drugfor ASC"
+            comm = New MySqlCommand(query, MysqlConn)
+            reader = comm.ExecuteReader
+
+
+            dm_drugfor.Items.Clear()
+
+            While reader.Read
+
+                dm_drugfor.Items.Add(reader.GetString("drugfor"))
+            End While
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+    End Sub
 
     Public Sub load_drugnamein_du()
         Try
@@ -53,41 +86,6 @@ Public Class Main
         End Try
 
     End Sub
-
-    Public Sub load_du_drugname_with_assoc_du_drugclass()
-        Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
-
-            du_drugname_collection.Items.Clear()
-
-
-            If MysqlConn.State = ConnectionState.Open Then
-                MysqlConn.Close()
-            End If
-
-            MysqlConn.Open()
-            query = "SELECT drugname FROM drugs WHERE drugclassification=@drugclassfication ORDER BY drugname ASC"
-            comm = New MySqlCommand(query, MysqlConn)
-            comm.Parameters.AddWithValue("@drugclassfication", du_drugclassification_collection.Text)
-            reader = comm.ExecuteReader
-
-            du_drugname_collection.Items.Clear()
-
-            While reader.Read
-                du_drugname_collection.Items.Add(reader.GetString("drugname"))
-
-            End While
-            MysqlConn.Close()
-
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
-        Finally
-            MysqlConn.Dispose()
-
-        End Try
-    End Sub
-
 
 
 
@@ -126,6 +124,40 @@ Public Class Main
         End Try
     End Sub
 
+
+    Private Sub du_drugclassification_collection_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles du_drugclassification_collection.SelectedIndexChanged
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            du_drugname_collection.Items.Clear()
+
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT drugname FROM drugs WHERE drugclassification=@drugclassfication ORDER BY drugname ASC"
+            comm = New MySqlCommand(query, MysqlConn)
+            comm.Parameters.AddWithValue("@drugclassfication", du_drugclassification_collection.Text)
+            reader = comm.ExecuteReader
+
+            du_drugname_collection.Items.Clear()
+
+            While reader.Read
+                du_drugname_collection.Items.Add(reader.GetString("drugname"))
+
+            End While
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+    End Sub
 
 
 
@@ -209,6 +241,7 @@ Public Class Main
             MysqlConn.Dispose()
             load_drugnamein_du()
             load_listofdrugs()
+            load_drug_for_dm()
         End Try
     End Sub
 

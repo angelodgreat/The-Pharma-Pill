@@ -22,7 +22,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuItem2 = New Telerik.WinControls.UI.RadMenuItem()
@@ -222,7 +222,7 @@ Partial Class Main
         Me.RadPageView1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadPageView1.Location = New System.Drawing.Point(0, 19)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.rpvp_dv
+        Me.RadPageView1.SelectedPage = Me.rpvp_dm
         Me.RadPageView1.Size = New System.Drawing.Size(1358, 679)
         Me.RadPageView1.TabIndex = 4
         Me.RadPageView1.Text = "RadPageView1"
@@ -653,7 +653,7 @@ Partial Class Main
         Me.dm_druglist.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill
         Me.dm_druglist.MasterTemplate.EnableGrouping = False
         Me.dm_druglist.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dm_druglist.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.dm_druglist.MasterTemplate.ViewDefinition = TableViewDefinition3
         Me.dm_druglist.Name = "dm_druglist"
         Me.dm_druglist.ReadOnly = True
         Me.dm_druglist.Size = New System.Drawing.Size(323, 297)
@@ -823,7 +823,7 @@ Partial Class Main
         Me.dm_daiph_drugname.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dm_daiph_drugname.Location = New System.Drawing.Point(5, 54)
         Me.dm_daiph_drugname.Name = "dm_daiph_drugname"
-        Me.dm_daiph_drugname.Size = New System.Drawing.Size(441, 0)
+        Me.dm_daiph_drugname.Size = New System.Drawing.Size(441, 19)
         Me.dm_daiph_drugname.TabIndex = 14
         '
         'RadLabel1
@@ -851,7 +851,7 @@ Partial Class Main
         Me.dm_daiph_tb_brandinph.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dm_daiph_tb_brandinph.Location = New System.Drawing.Point(5, 103)
         Me.dm_daiph_tb_brandinph.Name = "dm_daiph_tb_brandinph"
-        Me.dm_daiph_tb_brandinph.Size = New System.Drawing.Size(441, 0)
+        Me.dm_daiph_tb_brandinph.Size = New System.Drawing.Size(441, 19)
         Me.dm_daiph_tb_brandinph.TabIndex = 15
         '
         'dm_druginteractions
