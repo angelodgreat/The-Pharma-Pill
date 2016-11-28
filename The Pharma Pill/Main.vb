@@ -106,7 +106,7 @@ Public Class Main
                     MysqlConn.Close()
                     MysqlConn.Open()
 
-                    query = "INSERT INTO drugs VALUES (@drugfor,@drugclassification,@drugname,@indication,@contraindication,@specialprecautions,@sideeffects,@druginteraction,@dosinginformationtype,@druginformation)"
+                    query = "INSERT INTO drugs VALUES (@drugfor,@drugclassification,@drugname,@indication,@contraindication,@specialprecautions,@sideeffects,@druginteraction,@dosinginformationtype,@druginformation,@brandnameintheph)"
 
                     comm = New MySqlCommand(query, MysqlConn)
                     comm.Parameters.AddWithValue("@drugfor", dm_drugfor.Text)
@@ -119,7 +119,7 @@ Public Class Main
                     comm.Parameters.AddWithValue("@druginteraction", dm_druginteractions.Text)
                     comm.Parameters.AddWithValue("dosinginformationtype", dm_dosinginformationtype.Text)
                     comm.Parameters.AddWithValue("@druginformation", dm_dosinginformation.Text)
-
+                    comm.Parameters.AddWithValue("@brandnameintheph", dm_drugsinph.Text)
 
                     reader = comm.ExecuteReader
                     MysqlConn.Close()
@@ -133,6 +133,7 @@ Public Class Main
         Finally
             MysqlConn.Dispose()
             load_drugnamein_du()
+            load_listofdrugs()
         End Try
     End Sub
 
@@ -162,7 +163,7 @@ Public Class Main
                 du_druginteractions.Text = reader.GetString("druginteraction")
                 du_dosinginformationtype.Text = reader.GetString("dosinginformationtype")
                 du_dosinginformation.Text = reader.GetString("dosinginformation")
-
+                du_lbl_drugavailableinph.Text = reader.GetString("drugsavailableinph")
             End While
             MysqlConn.Close()
 
@@ -283,14 +284,9 @@ Public Class Main
             e.Cancel = True
         End If
 
+
+
     End Sub
-
-
-
-
-
-
-
 
 
 

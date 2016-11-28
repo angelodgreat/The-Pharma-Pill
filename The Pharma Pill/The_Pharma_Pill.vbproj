@@ -152,7 +152,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\test.html" />
+    <Content Include="FAQ.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
