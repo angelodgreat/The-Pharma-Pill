@@ -217,7 +217,7 @@ Partial Class Main
         Me.RadPageView1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadPageView1.Location = New System.Drawing.Point(0, 19)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.rpvp_dm
+        Me.RadPageView1.SelectedPage = Me.rpvp_dv
         Me.RadPageView1.Size = New System.Drawing.Size(1358, 679)
         Me.RadPageView1.TabIndex = 4
         Me.RadPageView1.Text = "RadPageView1"
@@ -297,7 +297,7 @@ Partial Class Main
         Me.RadPageView2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadPageView2.Location = New System.Drawing.Point(2, 18)
         Me.RadPageView2.Name = "RadPageView2"
-        Me.RadPageView2.SelectedPage = Me.RadPageViewPage3
+        Me.RadPageView2.SelectedPage = Me.RadPageViewPage1
         Me.RadPageView2.Size = New System.Drawing.Size(1327, 498)
         Me.RadPageView2.TabIndex = 0
         Me.RadPageView2.Text = "RadPageView2"
