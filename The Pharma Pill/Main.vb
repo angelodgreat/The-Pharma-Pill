@@ -8,6 +8,7 @@ Public Class Main
     Dim query As String
 
     Dim adddrug As DialogResult
+    Dim updatedrug As DialogResult
     Dim exityn As DialogResult
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -18,6 +19,7 @@ Public Class Main
 
         ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue"
     End Sub
+
 
     Public Sub load_drug_for_dm()
         Try
@@ -265,7 +267,7 @@ Public Class Main
                     MysqlConn.Close()
                     MysqlConn.Open()
 
-                    query = "INSERT INTO drugs VALUES (@drugfor,@drugclassification,@drugname,@indication,@contraindication,@specialprecautions,@sideeffects,@druginteraction,@dosinginformationtype,@druginformation,@brandnameintheph)"
+                    query = "INSERT INTO drugs VALUES (@drugfor,@drugclassification,@drugname,@indication,@contraindication,@specialprecautions,@sideeffects,@druginteraction,@dosinginformationtype,@dosinginformation,@brandnameintheph)"
 
                     comm = New MySqlCommand(query, MysqlConn)
                     comm.Parameters.AddWithValue("@drugfor", dm_drugfor.Text)
@@ -277,13 +279,13 @@ Public Class Main
                     comm.Parameters.AddWithValue("@sideeffects", dm_sideeffects.Text)
                     comm.Parameters.AddWithValue("@druginteraction", dm_druginteractions.Text)
                     comm.Parameters.AddWithValue("dosinginformationtype", dm_dosinginformationtype.Text)
-                    comm.Parameters.AddWithValue("@druginformation", dm_dosinginformation.Text)
+                    comm.Parameters.AddWithValue("@dosinginformation", dm_dosinginformation.Text)
                     comm.Parameters.AddWithValue("@brandnameintheph", dm_drugsinph.Text)
 
                     reader = comm.ExecuteReader
                     MysqlConn.Close()
 
-                    RadMessageBox.Show(Me, "Succesfully saved!", "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Info)
+                    RadMessageBox.Show(Me, "Succesfully Saved!", "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Info)
                 End If
             End If
 
@@ -299,7 +301,53 @@ Public Class Main
 
 
     Private Sub dm_btn_update_Click(sender As Object, e As EventArgs) Handles dm_btn_update.Click
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
 
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            updatedrug = RadMessageBox.Show(Me, "Are you sure you want to update this record?", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Question)
+            If updatedrug = MsgBoxResult.Yes Then
+                If (dm_drugfor.Text = "") Or (dm_drugname.Text = "") Or (dm_drugclassification.Text = "") Then
+                    RadMessageBox.Show(Me, "Please double check your fields.", "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+                Else
+                    MysqlConn.Open()
+                    query = "UPDATE drugs SET drugfor=@drugfor,drugclassification=@drugclassification,drugname=@drugname,indication=@indication,contraindication=@contraindication,specialprecautions=@specialprecautions,sideeffects=@sideeffects,druginteraction=@druginteraction,dosinginformationtype=@dosinginformationtype,dosinginformation=@dosinginformation,drugsavailableinph=@brandnameintheph WHERE drugfor=@drugfor AND drugname=@drugname AND drugclassification=@drugclassification"
+
+                    comm = New MySqlCommand(query, MysqlConn)
+                    comm.Parameters.AddWithValue("@drugfor", dm_drugfor.Text)
+                    comm.Parameters.AddWithValue("@drugclassification", dm_drugclassification.Text)
+                    comm.Parameters.AddWithValue("@drugname", dm_drugname.Text)
+                    comm.Parameters.AddWithValue("@indication", dm_indication.Text)
+                    comm.Parameters.AddWithValue("@contraindication", dm_contraindication.Text)
+                    comm.Parameters.AddWithValue("@specialprecautions", dm_specialprecautions.Text)
+                    comm.Parameters.AddWithValue("@sideeffects", dm_sideeffects.Text)
+                    comm.Parameters.AddWithValue("@druginteraction", dm_druginteractions.Text)
+                    comm.Parameters.AddWithValue("dosinginformationtype", dm_dosinginformationtype.Text)
+                    comm.Parameters.AddWithValue("@dosinginformation", dm_dosinginformation.Text)
+                    comm.Parameters.AddWithValue("@brandnameintheph", dm_drugsinph.Text)
+
+                    reader = comm.ExecuteReader
+                    MysqlConn.Close()
+
+                    RadMessageBox.Show(Me, "Succesfully Updated!", "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Info)
+
+                End If
+            End If
+
+
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Finally
+            MysqlConn.Dispose()
+            load_drugnamein_du()
+            load_listofdrugs()
+            load_drug_for_dm()
+
+        End Try
     End Sub
 
 

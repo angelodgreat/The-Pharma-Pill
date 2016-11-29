@@ -22,6 +22,7 @@ Partial Class FAQ
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FAQ))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.wb_faq = New System.Windows.Forms.WebBrowser()
         Me.Panel1.SuspendLayout()
@@ -52,6 +53,7 @@ Partial Class FAQ
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(738, 471)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FAQ"
         '
         '
