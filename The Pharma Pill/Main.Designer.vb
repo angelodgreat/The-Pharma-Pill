@@ -22,7 +22,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuItem2 = New Telerik.WinControls.UI.RadMenuItem()
@@ -33,6 +33,8 @@ Partial Class Main
         Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
         Me.RadDropDownList2 = New Telerik.WinControls.UI.RadDropDownList()
         Me.rpvp_dv = New Telerik.WinControls.UI.RadPageViewPage()
+        Me.du_drugfor_collection = New Telerik.WinControls.UI.RadDropDownList()
+        Me.RadLabel17 = New Telerik.WinControls.UI.RadLabel()
         Me.du_btn_search = New Telerik.WinControls.UI.RadButton()
         Me.du_drugclassification_collection = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadLabel18 = New Telerik.WinControls.UI.RadLabel()
@@ -63,7 +65,6 @@ Partial Class Main
         Me.rpvp_dm = New Telerik.WinControls.UI.RadPageViewPage()
         Me.RadGroupBox7 = New Telerik.WinControls.UI.RadGroupBox()
         Me.dm_showdefault = New Telerik.WinControls.UI.RadButton()
-        Me.dm_btn_showdrugsinph = New Telerik.WinControls.UI.RadButton()
         Me.RadGroupBox5 = New Telerik.WinControls.UI.RadGroupBox()
         Me.dm_druglist = New Telerik.WinControls.UI.RadGridView()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
@@ -75,7 +76,7 @@ Partial Class Main
         Me.RadGroupBox6 = New Telerik.WinControls.UI.RadGroupBox()
         Me.dm_btn_save = New Telerik.WinControls.UI.RadButton()
         Me.dm_btn_clear = New Telerik.WinControls.UI.RadButton()
-        Me.RadButton3 = New Telerik.WinControls.UI.RadButton()
+        Me.dm_btn_update = New Telerik.WinControls.UI.RadButton()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
         Me.dm_daiph_btn_save = New Telerik.WinControls.UI.RadButton()
         Me.dm_daiph_drugname = New Telerik.WinControls.UI.RadDropDownList()
@@ -109,6 +110,8 @@ Partial Class Main
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.rpvp_dv.SuspendLayout()
+        CType(Me.du_drugfor_collection, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.du_btn_search, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.du_drugclassification_collection, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel18, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -142,7 +145,6 @@ Partial Class Main
         CType(Me.RadGroupBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox7.SuspendLayout()
         CType(Me.dm_showdefault, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dm_btn_showdrugsinph, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox5.SuspendLayout()
         CType(Me.dm_druglist, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -158,7 +160,7 @@ Partial Class Main
         Me.RadGroupBox6.SuspendLayout()
         CType(Me.dm_btn_save, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_btn_clear, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadButton3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dm_btn_update, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
         CType(Me.dm_daiph_btn_save, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -270,6 +272,8 @@ Partial Class Main
         '
         'rpvp_dv
         '
+        Me.rpvp_dv.Controls.Add(Me.du_drugfor_collection)
+        Me.rpvp_dv.Controls.Add(Me.RadLabel17)
         Me.rpvp_dv.Controls.Add(Me.du_btn_search)
         Me.rpvp_dv.Controls.Add(Me.du_drugclassification_collection)
         Me.rpvp_dv.Controls.Add(Me.RadLabel18)
@@ -283,9 +287,26 @@ Partial Class Main
         Me.rpvp_dv.Size = New System.Drawing.Size(1337, 632)
         Me.rpvp_dv.Text = "Drug Uses"
         '
+        'du_drugfor_collection
+        '
+        Me.du_drugfor_collection.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.du_drugfor_collection.Location = New System.Drawing.Point(487, 29)
+        Me.du_drugfor_collection.Name = "du_drugfor_collection"
+        Me.du_drugfor_collection.Size = New System.Drawing.Size(401, 19)
+        Me.du_drugfor_collection.TabIndex = 87
+        '
+        'RadLabel17
+        '
+        Me.RadLabel17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadLabel17.Location = New System.Drawing.Point(411, 29)
+        Me.RadLabel17.Name = "RadLabel17"
+        Me.RadLabel17.Size = New System.Drawing.Size(70, 19)
+        Me.RadLabel17.TabIndex = 86
+        Me.RadLabel17.Text = "Drug For:"
+        '
         'du_btn_search
         '
-        Me.du_btn_search.Location = New System.Drawing.Point(775, 79)
+        Me.du_btn_search.Location = New System.Drawing.Point(921, 49)
         Me.du_btn_search.Name = "du_btn_search"
         Me.du_btn_search.Size = New System.Drawing.Size(110, 24)
         Me.du_btn_search.TabIndex = 85
@@ -294,7 +315,7 @@ Partial Class Main
         'du_drugclassification_collection
         '
         Me.du_drugclassification_collection.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.du_drugclassification_collection.Location = New System.Drawing.Point(484, 29)
+        Me.du_drugclassification_collection.Location = New System.Drawing.Point(487, 54)
         Me.du_drugclassification_collection.Name = "du_drugclassification_collection"
         Me.du_drugclassification_collection.Size = New System.Drawing.Size(401, 19)
         Me.du_drugclassification_collection.TabIndex = 84
@@ -302,7 +323,7 @@ Partial Class Main
         'RadLabel18
         '
         Me.RadLabel18.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel18.Location = New System.Drawing.Point(390, 54)
+        Me.RadLabel18.Location = New System.Drawing.Point(393, 79)
         Me.RadLabel18.Name = "RadLabel18"
         Me.RadLabel18.Size = New System.Drawing.Size(88, 19)
         Me.RadLabel18.TabIndex = 83
@@ -347,7 +368,6 @@ Partial Class Main
         Me.RadPageViewPage1.Controls.Add(Me.RadLabel22)
         Me.RadPageViewPage1.Controls.Add(Me.RadLabel23)
         Me.RadPageViewPage1.Controls.Add(Me.RadLabel24)
-        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(103.0!, 28.0!)
         Me.RadPageViewPage1.Location = New System.Drawing.Point(10, 37)
         Me.RadPageViewPage1.Name = "RadPageViewPage1"
         Me.RadPageViewPage1.Size = New System.Drawing.Size(1306, 450)
@@ -454,7 +474,6 @@ Partial Class Main
         Me.RadPageViewPage2.Controls.Add(Me.RadLabel19)
         Me.RadPageViewPage2.Controls.Add(Me.RadLabel20)
         Me.RadPageViewPage2.Controls.Add(Me.RadLabel21)
-        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(105.0!, 28.0!)
         Me.RadPageViewPage2.Location = New System.Drawing.Point(10, 37)
         Me.RadPageViewPage2.Name = "RadPageViewPage2"
         Me.RadPageViewPage2.Size = New System.Drawing.Size(1306, 450)
@@ -538,7 +557,6 @@ Partial Class Main
         '
         Me.RadPageViewPage3.Controls.Add(Me.du_lbl_drugavailableinph)
         Me.RadPageViewPage3.Controls.Add(Me.RadLabel25)
-        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(183.0!, 28.0!)
         Me.RadPageViewPage3.Location = New System.Drawing.Point(10, 37)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
         Me.RadPageViewPage3.Size = New System.Drawing.Size(1306, 450)
@@ -568,7 +586,7 @@ Partial Class Main
         'RadLabel16
         '
         Me.RadLabel16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel16.Location = New System.Drawing.Point(340, 29)
+        Me.RadLabel16.Location = New System.Drawing.Point(343, 54)
         Me.RadLabel16.Name = "RadLabel16"
         Me.RadLabel16.Size = New System.Drawing.Size(138, 19)
         Me.RadLabel16.TabIndex = 81
@@ -577,7 +595,7 @@ Partial Class Main
         'du_drugname_collection
         '
         Me.du_drugname_collection.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.du_drugname_collection.Location = New System.Drawing.Point(484, 54)
+        Me.du_drugname_collection.Location = New System.Drawing.Point(487, 79)
         Me.du_drugname_collection.Name = "du_drugname_collection"
         Me.du_drugname_collection.Size = New System.Drawing.Size(401, 19)
         Me.du_drugname_collection.TabIndex = 56
@@ -587,6 +605,7 @@ Partial Class Main
         Me.rpvp_dm.Controls.Add(Me.RadGroupBox7)
         Me.rpvp_dm.Controls.Add(Me.RadGroupBox5)
         Me.rpvp_dm.Controls.Add(Me.RadGroupBox1)
+        Me.rpvp_dm.Controls.Add(Me.RadGroupBox2)
         Me.rpvp_dm.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rpvp_dm.ItemSize = New System.Drawing.SizeF(109.0!, 27.0!)
         Me.rpvp_dm.Location = New System.Drawing.Point(10, 36)
@@ -599,32 +618,22 @@ Partial Class Main
         Me.RadGroupBox7.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.RadGroupBox7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadGroupBox7.Controls.Add(Me.dm_showdefault)
-        Me.RadGroupBox7.Controls.Add(Me.dm_btn_showdrugsinph)
         Me.RadGroupBox7.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadGroupBox7.HeaderText = "Controls"
-        Me.RadGroupBox7.Location = New System.Drawing.Point(1007, 342)
+        Me.RadGroupBox7.Location = New System.Drawing.Point(1097, 340)
         Me.RadGroupBox7.Name = "RadGroupBox7"
-        Me.RadGroupBox7.Size = New System.Drawing.Size(330, 82)
+        Me.RadGroupBox7.Size = New System.Drawing.Size(157, 75)
         Me.RadGroupBox7.TabIndex = 22
         Me.RadGroupBox7.Text = "Controls"
         '
         'dm_showdefault
         '
         Me.dm_showdefault.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dm_showdefault.Location = New System.Drawing.Point(17, 22)
+        Me.dm_showdefault.Location = New System.Drawing.Point(5, 21)
         Me.dm_showdefault.Name = "dm_showdefault"
         Me.dm_showdefault.Size = New System.Drawing.Size(146, 46)
         Me.dm_showdefault.TabIndex = 18
         Me.dm_showdefault.Text = "Show Default"
-        '
-        'dm_btn_showdrugsinph
-        '
-        Me.dm_btn_showdrugsinph.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dm_btn_showdrugsinph.Location = New System.Drawing.Point(169, 21)
-        Me.dm_btn_showdrugsinph.Name = "dm_btn_showdrugsinph"
-        Me.dm_btn_showdrugsinph.Size = New System.Drawing.Size(146, 46)
-        Me.dm_btn_showdrugsinph.TabIndex = 17
-        Me.dm_btn_showdrugsinph.Text = "Show Available Drugs" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " in the Philippines"
         '
         'RadGroupBox5
         '
@@ -653,7 +662,7 @@ Partial Class Main
         Me.dm_druglist.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill
         Me.dm_druglist.MasterTemplate.EnableGrouping = False
         Me.dm_druglist.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dm_druglist.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.dm_druglist.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dm_druglist.Name = "dm_druglist"
         Me.dm_druglist.ReadOnly = True
         Me.dm_druglist.Size = New System.Drawing.Size(323, 297)
@@ -672,7 +681,6 @@ Partial Class Main
         Me.RadGroupBox1.Controls.Add(Me.dm_drugfor)
         Me.RadGroupBox1.Controls.Add(Me.dm_dosinginformationtype)
         Me.RadGroupBox1.Controls.Add(Me.RadGroupBox6)
-        Me.RadGroupBox1.Controls.Add(Me.RadGroupBox2)
         Me.RadGroupBox1.Controls.Add(Me.dm_druginteractions)
         Me.RadGroupBox1.Controls.Add(Me.dm_sideeffects)
         Me.RadGroupBox1.Controls.Add(Me.dm_specialprecautions)
@@ -749,10 +757,10 @@ Partial Class Main
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadGroupBox6.Controls.Add(Me.dm_btn_save)
         Me.RadGroupBox6.Controls.Add(Me.dm_btn_clear)
-        Me.RadGroupBox6.Controls.Add(Me.RadButton3)
+        Me.RadGroupBox6.Controls.Add(Me.dm_btn_update)
         Me.RadGroupBox6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadGroupBox6.HeaderText = "Controls"
-        Me.RadGroupBox6.Location = New System.Drawing.Point(529, 370)
+        Me.RadGroupBox6.Location = New System.Drawing.Point(529, 522)
         Me.RadGroupBox6.Name = "RadGroupBox6"
         Me.RadGroupBox6.Size = New System.Drawing.Size(451, 56)
         Me.RadGroupBox6.TabIndex = 5
@@ -777,15 +785,15 @@ Partial Class Main
         Me.dm_btn_clear.TabIndex = 13
         Me.dm_btn_clear.Text = "Clear"
         '
-        'RadButton3
+        'dm_btn_update
         '
-        Me.RadButton3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadButton3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadButton3.Location = New System.Drawing.Point(246, 21)
-        Me.RadButton3.Name = "RadButton3"
-        Me.RadButton3.Size = New System.Drawing.Size(96, 27)
-        Me.RadButton3.TabIndex = 12
-        Me.RadButton3.Text = "Delete"
+        Me.dm_btn_update.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dm_btn_update.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dm_btn_update.Location = New System.Drawing.Point(246, 21)
+        Me.dm_btn_update.Name = "dm_btn_update"
+        Me.dm_btn_update.Size = New System.Drawing.Size(96, 27)
+        Me.dm_btn_update.TabIndex = 12
+        Me.dm_btn_update.Text = "Update"
         '
         'RadGroupBox2
         '
@@ -799,9 +807,9 @@ Partial Class Main
         Me.RadGroupBox2.Controls.Add(Me.dm_daiph_tb_brandinph)
         Me.RadGroupBox2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadGroupBox2.HeaderText = "Adding New Drug Records available in the Philippines"
-        Me.RadGroupBox2.Location = New System.Drawing.Point(529, 432)
+        Me.RadGroupBox2.Location = New System.Drawing.Point(1005, 445)
         Me.RadGroupBox2.Name = "RadGroupBox2"
-        Me.RadGroupBox2.Size = New System.Drawing.Size(451, 158)
+        Me.RadGroupBox2.Size = New System.Drawing.Size(327, 158)
         Me.RadGroupBox2.TabIndex = 18
         Me.RadGroupBox2.Text = "Adding New Drug Records available in the Philippines"
         '
@@ -809,7 +817,7 @@ Partial Class Main
         '
         Me.dm_daiph_btn_save.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dm_daiph_btn_save.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dm_daiph_btn_save.Location = New System.Drawing.Point(350, 128)
+        Me.dm_daiph_btn_save.Location = New System.Drawing.Point(226, 128)
         Me.dm_daiph_btn_save.Name = "dm_daiph_btn_save"
         Me.dm_daiph_btn_save.Size = New System.Drawing.Size(96, 24)
         Me.dm_daiph_btn_save.TabIndex = 16
@@ -823,7 +831,7 @@ Partial Class Main
         Me.dm_daiph_drugname.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dm_daiph_drugname.Location = New System.Drawing.Point(5, 54)
         Me.dm_daiph_drugname.Name = "dm_daiph_drugname"
-        Me.dm_daiph_drugname.Size = New System.Drawing.Size(441, 19)
+        Me.dm_daiph_drugname.Size = New System.Drawing.Size(317, 19)
         Me.dm_daiph_drugname.TabIndex = 14
         '
         'RadLabel1
@@ -851,7 +859,7 @@ Partial Class Main
         Me.dm_daiph_tb_brandinph.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dm_daiph_tb_brandinph.Location = New System.Drawing.Point(5, 103)
         Me.dm_daiph_tb_brandinph.Name = "dm_daiph_tb_brandinph"
-        Me.dm_daiph_tb_brandinph.Size = New System.Drawing.Size(441, 19)
+        Me.dm_daiph_tb_brandinph.Size = New System.Drawing.Size(317, 19)
         Me.dm_daiph_tb_brandinph.TabIndex = 15
         '
         'dm_druginteractions
@@ -1043,6 +1051,8 @@ Partial Class Main
         CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.rpvp_dv.ResumeLayout(False)
         Me.rpvp_dv.PerformLayout()
+        CType(Me.du_drugfor_collection, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.du_btn_search, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.du_drugclassification_collection, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel18, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1079,7 +1089,6 @@ Partial Class Main
         CType(Me.RadGroupBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox7.ResumeLayout(False)
         CType(Me.dm_showdefault, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dm_btn_showdrugsinph, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox5.ResumeLayout(False)
         CType(Me.dm_druglist.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1096,7 +1105,7 @@ Partial Class Main
         Me.RadGroupBox6.ResumeLayout(False)
         CType(Me.dm_btn_save, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_btn_clear, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadButton3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dm_btn_update, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
         Me.RadGroupBox2.PerformLayout()
@@ -1144,7 +1153,7 @@ Partial Class Main
     Friend WithEvents dm_druglist As Telerik.WinControls.UI.RadGridView
     Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents dm_btn_clear As Telerik.WinControls.UI.RadButton
-    Friend WithEvents RadButton3 As Telerik.WinControls.UI.RadButton
+    Friend WithEvents dm_btn_update As Telerik.WinControls.UI.RadButton
     Friend WithEvents RadGroupBox2 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents dm_daiph_btn_save As Telerik.WinControls.UI.RadButton
     Friend WithEvents dm_daiph_drugname As Telerik.WinControls.UI.RadDropDownList
@@ -1172,7 +1181,6 @@ Partial Class Main
     Friend WithEvents RadGroupBox6 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadGroupBox7 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents dm_showdefault As Telerik.WinControls.UI.RadButton
-    Friend WithEvents dm_btn_showdrugsinph As Telerik.WinControls.UI.RadButton
     Friend WithEvents TelerikMetroBlueTheme1 As Telerik.WinControls.Themes.TelerikMetroBlueTheme
     Friend WithEvents rmi_faq As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RadLabel11 As Telerik.WinControls.UI.RadLabel
@@ -1205,5 +1213,7 @@ Partial Class Main
     Friend WithEvents RadLabel25 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents dm_drugsinph As Telerik.WinControls.UI.RadTextBoxControl
     Friend WithEvents RadLabel12 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents du_drugfor_collection As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents RadLabel17 As Telerik.WinControls.UI.RadLabel
 End Class
 
