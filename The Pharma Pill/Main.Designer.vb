@@ -321,7 +321,6 @@ Partial Class Main
         '
         'RadLabel15
         '
-        Me.RadLabel15.BorderVisible = True
         Me.RadLabel15.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadLabel15.Location = New System.Drawing.Point(10, 14)
         Me.RadLabel15.Name = "RadLabel15"
@@ -333,7 +332,6 @@ Partial Class Main
         '
         Me.RadLabel22.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel22.BorderVisible = True
         Me.RadLabel22.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadLabel22.Location = New System.Drawing.Point(637, 246)
         Me.RadLabel22.Name = "RadLabel22"
@@ -345,7 +343,6 @@ Partial Class Main
         '
         Me.RadLabel23.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel23.BorderVisible = True
         Me.RadLabel23.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadLabel23.Location = New System.Drawing.Point(637, 14)
         Me.RadLabel23.Name = "RadLabel23"
@@ -355,7 +352,6 @@ Partial Class Main
         '
         'RadLabel24
         '
-        Me.RadLabel24.BorderVisible = True
         Me.RadLabel24.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadLabel24.Location = New System.Drawing.Point(10, 80)
         Me.RadLabel24.Name = "RadLabel24"
@@ -380,7 +376,6 @@ Partial Class Main
         '
         'RadLabel19
         '
-        Me.RadLabel19.BorderVisible = True
         Me.RadLabel19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadLabel19.Location = New System.Drawing.Point(651, 3)
         Me.RadLabel19.Name = "RadLabel19"
@@ -390,7 +385,6 @@ Partial Class Main
         '
         'RadLabel20
         '
-        Me.RadLabel20.BorderVisible = True
         Me.RadLabel20.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadLabel20.Location = New System.Drawing.Point(3, 235)
         Me.RadLabel20.Name = "RadLabel20"
@@ -400,7 +394,6 @@ Partial Class Main
         '
         'RadLabel21
         '
-        Me.RadLabel21.BorderVisible = True
         Me.RadLabel21.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadLabel21.Location = New System.Drawing.Point(3, 3)
         Me.RadLabel21.Name = "RadLabel21"
@@ -420,7 +413,6 @@ Partial Class Main
         '
         'RadLabel25
         '
-        Me.RadLabel25.BorderVisible = True
         Me.RadLabel25.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadLabel25.Location = New System.Drawing.Point(3, 16)
         Me.RadLabel25.Name = "RadLabel25"
