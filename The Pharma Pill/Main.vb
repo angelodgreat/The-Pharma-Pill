@@ -13,7 +13,7 @@ Public Class Main
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_drugnamein_du()
         load_listofdrugs()
-        load_drug_classification()
+
         load_drug_for_dm()
 
         ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue"
@@ -91,39 +91,6 @@ Public Class Main
     End Sub
 
 
-
-    Public Sub load_drug_classification()
-        Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
-
-            dm_drugclassification.Items.Clear()
-
-            If MysqlConn.State = ConnectionState.Open Then
-                MysqlConn.Close()
-            End If
-
-            MysqlConn.Open()
-            query = "SELECT DISTINCT drugclassification FROM drugs ORDER BY drugclassification ASC"
-            comm = New MySqlCommand(query, MysqlConn)
-            reader = comm.ExecuteReader
-
-            dm_drugclassification.Items.Clear()
-
-
-            While reader.Read
-                dm_drugclassification.Items.Add(reader.GetString("drugclassification"))
-
-            End While
-            MysqlConn.Close()
-
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
-        Finally
-            MysqlConn.Dispose()
-
-        End Try
-    End Sub
 
     Private Sub du_drugfor_collection_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles du_drugfor_collection.SelectedIndexChanged
         Try
@@ -424,14 +391,75 @@ Public Class Main
             MysqlConn.ConnectionString = connstring
             Dim reader As MySqlDataReader
 
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT * FROM drugs WHERE drugname=@drugname"
+            comm = New MySqlCommand(query, MysqlConn)
+            comm.Parameters.AddWithValue("@drugname", dm_drugname.Text)
+            reader = comm.ExecuteReader
+
+            While reader.Read
+                dm_drugfor.Text = reader.GetString("drugfor")
+                dm_indication.Text = reader.GetString("indication")
+                dm_drugclassification.Text = reader.GetString("drugclassification")
+                dm_contraindication.Text = reader.GetString("contraindication")
+                dm_specialprecautions.Text = reader.GetString("specialprecautions")
+                dm_sideeffects.Text = reader.GetString("sideeffects")
+                dm_druginteractions.Text = reader.GetString("druginteraction")
+                dm_dosinginformationtype.Text = reader.GetString("dosinginformationtype")
+                dm_dosinginformation.Text = reader.GetString("dosinginformation")
+                dm_drugsinph.Text = reader.GetString("drugsavailableinph")
+
+            End While
+            MysqlConn.Close()
+
             'TO BE FINISHED
         Catch ex As Exception
-
+            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Finally
+            MysqlConn.Dispose()
         End Try
 
 
 
 
+    End Sub
+
+    Private Sub dm_drugfor_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dm_drugfor.SelectedIndexChanged
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            dm_drugclassification.Items.Clear()
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT DISTINCT drugclassification FROM drugs WHERE drugfor=@drugfor ORDER BY drugclassification ASC"
+            comm = New MySqlCommand(query, MysqlConn)
+            comm.Parameters.AddWithValue("@drugfor", dm_drugfor.Text)
+            reader = comm.ExecuteReader
+
+            dm_drugclassification.Items.Clear()
+
+
+            While reader.Read
+                dm_drugclassification.Items.Add(reader.GetString("drugclassification"))
+
+            End While
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
     End Sub
 
 
