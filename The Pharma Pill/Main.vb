@@ -12,9 +12,9 @@ Public Class Main
     Dim exityn As DialogResult
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        load_drugnamein_du()
-        load_listofdrugs()
 
+        load_listofdrugs()
+        dm_btn_update.Hide()
         load_drug_for_dm()
 
         ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue"
@@ -56,42 +56,6 @@ Public Class Main
 
         End Try
     End Sub
-
-    Public Sub load_drugnamein_du()
-        Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
-
-
-            dm_daiph_drugname.Items.Clear()
-
-            If MysqlConn.State = ConnectionState.Open Then
-                MysqlConn.Close()
-            End If
-
-            MysqlConn.Open()
-            query = "SELECT drugname FROM drugs ORDER BY drugname ASC"
-            comm = New MySqlCommand(query, MysqlConn)
-            reader = comm.ExecuteReader
-
-
-            dm_daiph_drugname.Items.Clear()
-
-            While reader.Read
-
-                dm_daiph_drugname.Items.Add(reader.GetString("drugname"))
-            End While
-            MysqlConn.Close()
-
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
-        Finally
-            MysqlConn.Dispose()
-
-        End Try
-
-    End Sub
-
 
 
     Private Sub du_drugfor_collection_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles du_drugfor_collection.SelectedIndexChanged
@@ -252,7 +216,11 @@ Public Class Main
 
     Private Sub dm_btn_save_Click(sender As Object, e As EventArgs) Handles dm_btn_save.Click
         Try
-            adddrug = RadMessageBox.Show("Are you sure you want to add this drug?", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Question)
+            If (dm_drugname.Text = "") Or (dm_drugfor.Text = "") Or (dm_drugclassification.Text = "") Then
+                RadMessageBox.Show("Please input a Drug For, Drug Classification and Drug Name!", "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+            Else
+
+                adddrug = RadMessageBox.Show("Are you sure you want to add this drug?", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Question)
 
             If adddrug = MsgBoxResult.Yes Then
 
@@ -260,10 +228,7 @@ Public Class Main
                 MysqlConn.ConnectionString = connstring
                 Dim reader As MySqlDataReader
 
-                If dm_drugname.Text = "" Then
-                    RadMessageBox.Show("Please input a drug name", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Exclamation)
 
-                Else
                     MysqlConn.Close()
                     MysqlConn.Open()
 
@@ -293,7 +258,7 @@ Public Class Main
             RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
         Finally
             MysqlConn.Dispose()
-            load_drugnamein_du()
+
             load_listofdrugs()
             load_drug_for_dm()
         End Try
@@ -308,12 +273,14 @@ Public Class Main
             If MysqlConn.State = ConnectionState.Open Then
                 MysqlConn.Close()
             End If
+            If (dm_drugfor.Text = "") Or (dm_drugname.Text = "") Or (dm_drugclassification.Text = "") Then
+                RadMessageBox.Show(Me, "Please double check your fields. The fields Drug For, Drug Classification and Drug Name should have an input.", "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+            Else
 
-            updatedrug = RadMessageBox.Show(Me, "Are you sure you want to update this record?", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Question)
+                updatedrug = RadMessageBox.Show(Me, "Are you sure you want to update this record?", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Question)
             If updatedrug = MsgBoxResult.Yes Then
-                If (dm_drugfor.Text = "") Or (dm_drugname.Text = "") Or (dm_drugclassification.Text = "") Then
-                    RadMessageBox.Show(Me, "Please double check your fields.", "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
-                Else
+
+
                     MysqlConn.Open()
                     query = "UPDATE drugs SET drugfor=@drugfor,drugclassification=@drugclassification,drugname=@drugname,indication=@indication,contraindication=@contraindication,specialprecautions=@specialprecautions,sideeffects=@sideeffects,druginteraction=@druginteraction,dosinginformationtype=@dosinginformationtype,dosinginformation=@dosinginformation,drugsavailableinph=@brandnameintheph WHERE drugfor=@drugfor AND drugname=@drugname AND drugclassification=@drugclassification"
 
@@ -343,7 +310,7 @@ Public Class Main
             RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
         Finally
             MysqlConn.Dispose()
-            load_drugnamein_du()
+
             load_listofdrugs()
             load_drug_for_dm()
 
@@ -351,43 +318,6 @@ Public Class Main
     End Sub
 
 
-    Private Sub dm_daiph_btn_save_Click(sender As Object, e As EventArgs)
-        Try
-            adddrug = RadMessageBox.Show("Are you sure you want to add this drug?", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Question)
-
-            If adddrug = MsgBoxResult.Yes Then
-
-                MysqlConn = New MySqlConnection
-                MysqlConn.ConnectionString = connstring
-                Dim reader As MySqlDataReader
-
-                If dm_daiph_drugname.Text = "" Then
-                    RadMessageBox.Show("Please choose a drug name", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Exclamation)
-
-                Else
-                    MysqlConn.Close()
-                    MysqlConn.Open()
-
-                    query = "INSERT INTO brandnameinphtable VALUES (@drugname,@brandnameintheph)"
-
-                    comm = New MySqlCommand(query, MysqlConn)
-                    comm.Parameters.AddWithValue("@drugname", dm_daiph_drugname.Text)
-                    comm.Parameters.AddWithValue("@brandnameintheph", dm_daiph_tb_brandinph.Text)
-
-
-                    reader = comm.ExecuteReader
-                    MysqlConn.Close()
-
-                    RadMessageBox.Show(Me, "Succesfully saved!", "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Info)
-                End If
-            End If
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
-        Finally
-            MysqlConn.Dispose()
-
-        End Try
-    End Sub
 
     Private Sub rmi_faq_Click(sender As Object, e As EventArgs) Handles rmi_faq.Click
         Dim faq As New FAQ
@@ -406,6 +336,8 @@ Public Class Main
         dm_dosinginformationtype.Text = ""
         dm_dosinginformation.Text = ""
         dm_drugclassification.Text = ""
+        dm_drugsinph.Text = ""
+        dm_btn_update.Hide()
     End Sub
 
     Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -424,7 +356,7 @@ Public Class Main
     End Sub
 
     Private Sub dm_druglist_CellClick(sender As Object, e As GridViewCellEventArgs) Handles dm_druglist.CellClick
-
+        dm_btn_update.Show()
 
         If e.RowIndex >= 0 Then
             Dim row As Telerik.WinControls.UI.GridViewRowInfo
@@ -509,6 +441,12 @@ Public Class Main
 
         End Try
     End Sub
+
+    Private Sub go_toabout_Click(sender As Object, e As EventArgs) Handles go_toabout.Click
+        Dim about As New About
+        about.Show()
+    End Sub
+
 
 
 

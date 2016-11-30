@@ -26,7 +26,7 @@ Partial Class Main
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
-        Me.RadMenuItem2 = New Telerik.WinControls.UI.RadMenuItem()
+        Me.go_toabout = New Telerik.WinControls.UI.RadMenuItem()
         Me.rmi_faq = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadPageView1 = New Telerik.WinControls.UI.RadPageView()
         Me.rpvp_dv = New Telerik.WinControls.UI.RadPageViewPage()
@@ -66,6 +66,7 @@ Partial Class Main
         Me.RadGroupBox5 = New Telerik.WinControls.UI.RadGroupBox()
         Me.dm_druglist = New Telerik.WinControls.UI.RadGridView()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadLabel13 = New Telerik.WinControls.UI.RadLabel()
         Me.dm_drugsinph = New Telerik.WinControls.UI.RadTextBoxControl()
         Me.RadLabel12 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel11 = New Telerik.WinControls.UI.RadLabel()
@@ -81,7 +82,6 @@ Partial Class Main
         Me.dm_contraindication = New Telerik.WinControls.UI.RadTextBoxControl()
         Me.dm_drugclassification = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadLabel14 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel13 = New Telerik.WinControls.UI.RadLabel()
         Me.dm_dosinginformation = New Telerik.WinControls.UI.RadTextBoxControl()
         Me.RadLabel10 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel9 = New Telerik.WinControls.UI.RadLabel()
@@ -139,6 +139,7 @@ Partial Class Main
         CType(Me.dm_druglist.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
+        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_drugsinph, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,7 +156,6 @@ Partial Class Main
         CType(Me.dm_contraindication, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_drugclassification, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_dosinginformation, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -172,7 +172,7 @@ Partial Class Main
         'RadMenu1
         '
         Me.RadMenu1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadMenuItem1, Me.RadMenuItem2, Me.rmi_faq})
+        Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadMenuItem1, Me.go_toabout, Me.rmi_faq})
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
         Me.RadMenu1.Size = New System.Drawing.Size(1358, 19)
@@ -185,11 +185,11 @@ Partial Class Main
         Me.RadMenuItem1.Name = "RadMenuItem1"
         Me.RadMenuItem1.Text = "File"
         '
-        'RadMenuItem2
+        'go_toabout
         '
-        Me.RadMenuItem2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadMenuItem2.Name = "RadMenuItem2"
-        Me.RadMenuItem2.Text = "About"
+        Me.go_toabout.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.go_toabout.Name = "go_toabout"
+        Me.go_toabout.Text = "About"
         '
         'rmi_faq
         '
@@ -204,7 +204,7 @@ Partial Class Main
         Me.RadPageView1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadPageView1.Location = New System.Drawing.Point(0, 19)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.rpvp_dv
+        Me.RadPageView1.SelectedPage = Me.rpvp_dm
         Me.RadPageView1.Size = New System.Drawing.Size(1358, 679)
         Me.RadPageView1.TabIndex = 4
         Me.RadPageView1.Text = "RadPageView1"
@@ -336,7 +336,7 @@ Partial Class Main
         Me.du_specialprecautions.Location = New System.Drawing.Point(637, 271)
         Me.du_specialprecautions.Multiline = True
         Me.du_specialprecautions.Name = "du_specialprecautions"
-        Me.du_specialprecautions.Size = New System.Drawing.Size(666, 176)
+        Me.du_specialprecautions.Size = New System.Drawing.Size(666, 180)
         Me.du_specialprecautions.TabIndex = 95
         '
         'du_contraindication
@@ -362,7 +362,7 @@ Partial Class Main
         Me.du_indication.Location = New System.Drawing.Point(10, 105)
         Me.du_indication.Multiline = True
         Me.du_indication.Name = "du_indication"
-        Me.du_indication.Size = New System.Drawing.Size(621, 342)
+        Me.du_indication.Size = New System.Drawing.Size(621, 346)
         Me.du_indication.TabIndex = 93
         '
         'du_drugfor
@@ -660,9 +660,19 @@ Partial Class Main
         Me.RadGroupBox1.HeaderText = "Adding New Drug Records"
         Me.RadGroupBox1.Location = New System.Drawing.Point(3, 19)
         Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(998, 595)
+        Me.RadGroupBox1.Size = New System.Drawing.Size(998, 599)
         Me.RadGroupBox1.TabIndex = 19
         Me.RadGroupBox1.Text = "Adding New Drug Records"
+        '
+        'RadLabel13
+        '
+        Me.RadLabel13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel13.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadLabel13.Location = New System.Drawing.Point(504, 183)
+        Me.RadLabel13.Name = "RadLabel13"
+        Me.RadLabel13.Size = New System.Drawing.Size(106, 17)
+        Me.RadLabel13.TabIndex = 32
+        Me.RadLabel13.Text = "Dosing Information:"
         '
         'dm_drugsinph
         '
@@ -722,7 +732,7 @@ Partial Class Main
         Me.RadGroupBox6.Controls.Add(Me.dm_btn_update)
         Me.RadGroupBox6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadGroupBox6.HeaderText = "Controls"
-        Me.RadGroupBox6.Location = New System.Drawing.Point(329, 522)
+        Me.RadGroupBox6.Location = New System.Drawing.Point(329, 526)
         Me.RadGroupBox6.Name = "RadGroupBox6"
         Me.RadGroupBox6.Size = New System.Drawing.Size(451, 56)
         Me.RadGroupBox6.TabIndex = 5
@@ -821,16 +831,6 @@ Partial Class Main
         Me.RadLabel14.Size = New System.Drawing.Size(54, 17)
         Me.RadLabel14.TabIndex = 35
         Me.RadLabel14.Text = "Drug For:"
-        '
-        'RadLabel13
-        '
-        Me.RadLabel13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel13.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel13.Location = New System.Drawing.Point(504, 183)
-        Me.RadLabel13.Name = "RadLabel13"
-        Me.RadLabel13.Size = New System.Drawing.Size(106, 17)
-        Me.RadLabel13.TabIndex = 32
-        Me.RadLabel13.Text = "Dosing Information:"
         '
         'dm_dosinginformation
         '
@@ -997,6 +997,7 @@ Partial Class Main
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
         Me.RadGroupBox1.PerformLayout()
+        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_drugsinph, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1013,7 +1014,6 @@ Partial Class Main
         CType(Me.dm_contraindication, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_drugclassification, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_dosinginformation, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1032,7 +1032,7 @@ Partial Class Main
 
     Friend WithEvents RadMenu1 As Telerik.WinControls.UI.RadMenu
     Friend WithEvents RadMenuItem1 As Telerik.WinControls.UI.RadMenuItem
-    Friend WithEvents RadMenuItem2 As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents go_toabout As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RadPageView1 As Telerik.WinControls.UI.RadPageView
     Friend WithEvents rpvp_dm As Telerik.WinControls.UI.RadPageViewPage
     Friend WithEvents rpvp_dv As Telerik.WinControls.UI.RadPageViewPage
