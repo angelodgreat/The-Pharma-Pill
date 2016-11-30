@@ -24,8 +24,6 @@ Partial Class Main
     Private Sub InitializeComponent()
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
-        Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
-        Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         Me.go_toabout = New Telerik.WinControls.UI.RadMenuItem()
         Me.rmi_faq = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadPageView1 = New Telerik.WinControls.UI.RadPageView()
@@ -93,7 +91,7 @@ Partial Class Main
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.dm_drugname = New Telerik.WinControls.UI.RadTextBox()
         Me.TelerikMetroBlueTheme1 = New Telerik.WinControls.Themes.TelerikMetroBlueTheme()
-        CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         CType(Me.RadPageView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPageView1.SuspendLayout()
         Me.rpvp_dv.SuspendLayout()
@@ -167,23 +165,8 @@ Partial Class Main
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_drugname, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'RadMenu1
-        '
-        Me.RadMenu1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadMenuItem1, Me.go_toabout, Me.rmi_faq})
-        Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
-        Me.RadMenu1.Name = "RadMenu1"
-        Me.RadMenu1.Size = New System.Drawing.Size(1358, 19)
-        Me.RadMenu1.TabIndex = 3
-        Me.RadMenu1.Text = "RadMenu1"
-        '
-        'RadMenuItem1
-        '
-        Me.RadMenuItem1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadMenuItem1.Name = "RadMenuItem1"
-        Me.RadMenuItem1.Text = "File"
         '
         'go_toabout
         '
@@ -936,6 +919,16 @@ Partial Class Main
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1358, 698)
+        '
+        'RadMenu1
+        '
+        Me.RadMenu1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.go_toabout, Me.rmi_faq})
+        Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
+        Me.RadMenu1.Name = "RadMenu1"
+        Me.RadMenu1.Size = New System.Drawing.Size(1358, 19)
+        Me.RadMenu1.TabIndex = 3
+        Me.RadMenu1.Text = "RadMenu1"
         Me.Controls.Add(Me.RadPageView1)
         Me.Controls.Add(Me.RadMenu1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -946,7 +939,6 @@ Partial Class Main
         '
         Me.RootElement.ApplyShapeToControl = True
         Me.Text = "Main"
-        CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPageView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPageView1.ResumeLayout(False)
         Me.rpvp_dv.ResumeLayout(False)
@@ -1024,14 +1016,12 @@ Partial Class Main
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_drugname, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents RadMenu1 As Telerik.WinControls.UI.RadMenu
-    Friend WithEvents RadMenuItem1 As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents go_toabout As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RadPageView1 As Telerik.WinControls.UI.RadPageView
     Friend WithEvents rpvp_dm As Telerik.WinControls.UI.RadPageViewPage
@@ -1099,5 +1089,6 @@ Partial Class Main
     Friend WithEvents du_dosinginformationtype As Telerik.WinControls.UI.RadTextBoxControl
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents RadMenu1 As Telerik.WinControls.UI.RadMenu
 End Class
 
