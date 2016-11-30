@@ -351,7 +351,7 @@ Public Class Main
     End Sub
 
 
-    Private Sub dm_daiph_btn_save_Click(sender As Object, e As EventArgs) Handles dm_daiph_btn_save.Click
+    Private Sub dm_daiph_btn_save_Click(sender As Object, e As EventArgs)
         Try
             adddrug = RadMessageBox.Show("Are you sure you want to add this drug?", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Question)
 
