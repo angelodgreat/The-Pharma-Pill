@@ -92,6 +92,7 @@ Partial Class Main
         Me.dm_drugname = New Telerik.WinControls.UI.RadTextBox()
         Me.TelerikMetroBlueTheme1 = New Telerik.WinControls.Themes.TelerikMetroBlueTheme()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
+        Me.dm_btn_delete = New Telerik.WinControls.UI.RadButton()
         CType(Me.RadPageView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPageView1.SuspendLayout()
         Me.rpvp_dv.SuspendLayout()
@@ -165,6 +166,7 @@ Partial Class Main
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dm_drugname, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dm_btn_delete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -710,6 +712,7 @@ Partial Class Main
         Me.RadGroupBox6.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.RadGroupBox6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadGroupBox6.Controls.Add(Me.dm_btn_delete)
         Me.RadGroupBox6.Controls.Add(Me.dm_btn_save)
         Me.RadGroupBox6.Controls.Add(Me.dm_btn_clear)
         Me.RadGroupBox6.Controls.Add(Me.dm_btn_update)
@@ -717,7 +720,7 @@ Partial Class Main
         Me.RadGroupBox6.HeaderText = "Controls"
         Me.RadGroupBox6.Location = New System.Drawing.Point(329, 526)
         Me.RadGroupBox6.Name = "RadGroupBox6"
-        Me.RadGroupBox6.Size = New System.Drawing.Size(451, 56)
+        Me.RadGroupBox6.Size = New System.Drawing.Size(529, 56)
         Me.RadGroupBox6.TabIndex = 5
         Me.RadGroupBox6.Text = "Controls"
         '
@@ -725,7 +728,7 @@ Partial Class Main
         '
         Me.dm_btn_save.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dm_btn_save.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dm_btn_save.Location = New System.Drawing.Point(348, 21)
+        Me.dm_btn_save.Location = New System.Drawing.Point(426, 21)
         Me.dm_btn_save.Name = "dm_btn_save"
         Me.dm_btn_save.Size = New System.Drawing.Size(96, 27)
         Me.dm_btn_save.TabIndex = 12
@@ -744,7 +747,7 @@ Partial Class Main
         '
         Me.dm_btn_update.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dm_btn_update.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dm_btn_update.Location = New System.Drawing.Point(246, 21)
+        Me.dm_btn_update.Location = New System.Drawing.Point(324, 21)
         Me.dm_btn_update.Name = "dm_btn_update"
         Me.dm_btn_update.Size = New System.Drawing.Size(96, 27)
         Me.dm_btn_update.TabIndex = 13
@@ -924,6 +927,16 @@ Partial Class Main
         Me.RadMenu1.TabIndex = 3
         Me.RadMenu1.Text = "RadMenu1"
         '
+        'dm_btn_delete
+        '
+        Me.dm_btn_delete.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dm_btn_delete.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dm_btn_delete.Location = New System.Drawing.Point(222, 21)
+        Me.dm_btn_delete.Name = "dm_btn_delete"
+        Me.dm_btn_delete.Size = New System.Drawing.Size(96, 27)
+        Me.dm_btn_delete.TabIndex = 43
+        Me.dm_btn_delete.Text = "Delete"
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1017,6 +1030,7 @@ Partial Class Main
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dm_drugname, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dm_btn_delete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1090,5 +1104,6 @@ Partial Class Main
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents RadMenu1 As Telerik.WinControls.UI.RadMenu
+    Friend WithEvents dm_btn_delete As Telerik.WinControls.UI.RadButton
 End Class
 

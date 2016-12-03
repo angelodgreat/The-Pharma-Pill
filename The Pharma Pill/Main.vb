@@ -16,7 +16,7 @@ Public Class Main
         load_listofdrugs()
         dm_btn_update.Hide()
         load_drug_for_dm()
-
+        dm_btn_delete.Hide()
         ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue"
     End Sub
 
@@ -338,6 +338,7 @@ Public Class Main
         dm_drugclassification.Text = ""
         dm_drugsinph.Text = ""
         dm_btn_update.Hide()
+        dm_btn_delete.Hide()
     End Sub
 
     Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -357,6 +358,7 @@ Public Class Main
 
     Private Sub dm_druglist_CellClick(sender As Object, e As GridViewCellEventArgs) Handles dm_druglist.CellClick
         dm_btn_update.Show()
+        dm_btn_delete.Show()
 
         If e.RowIndex >= 0 Then
             Dim row As Telerik.WinControls.UI.GridViewRowInfo
@@ -445,6 +447,52 @@ Public Class Main
     Private Sub go_toabout_Click(sender As Object, e As EventArgs) Handles go_toabout.Click
         Dim about As New About
         about.Show()
+    End Sub
+
+
+    Private Sub dm_btn_delete_Click(sender As Object, e As EventArgs) Handles dm_btn_delete.Click
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+            If (dm_drugfor.Text = "") Or (dm_drugname.Text = "") Or (dm_drugclassification.Text = "") Then
+                RadMessageBox.Show(Me, "Please double check your fields. The fields Drug For, Drug Classification and Drug Name should have an input.", "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+            Else
+
+                updatedrug = RadMessageBox.Show(Me, "Are you sure you want to delete this record?", "The Pharma Pill", MessageBoxButtons.YesNo, RadMessageIcon.Question)
+                If updatedrug = MsgBoxResult.Yes Then
+
+
+                    MysqlConn.Open()
+                    query = "DELETE FROM drugs WHERE drugfor=@drugfor AND drugclassification=@drugclassification AND drugname=@drugname"
+
+                    comm = New MySqlCommand(query, MysqlConn)
+                    comm.Parameters.AddWithValue("@drugfor", dm_drugfor.Text)
+                    comm.Parameters.AddWithValue("@drugclassification", dm_drugclassification.Text)
+                    comm.Parameters.AddWithValue("@drugname", dm_drugname.Text)
+
+
+                    reader = comm.ExecuteReader
+                    MysqlConn.Close()
+
+                    RadMessageBox.Show(Me, "Succesfully Deleted!", "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Info)
+
+                End If
+            End If
+
+
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message, "The Pharma Pill", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Finally
+            MysqlConn.Dispose()
+
+            load_listofdrugs()
+            load_drug_for_dm()
+
+        End Try
     End Sub
 
 
